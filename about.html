@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavel Fuxa — O mně | Webový Developer</title>
+  <meta name="description"
+    content="Zjistěte více o mém přístupu k tvorbě moderních webů. Zaměřuji se na čistý design, rychlost a výsledky pro vaše podnikání." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="index.css" />
+
+  <style>
+    /* ========== ABOUT PAGE — HERO ========== */
+    .about-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse 55% 50% at 30% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 55% at 70% 35%, rgba(139, 92, 246, 0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 40% at 50% 85%, rgba(99, 102, 241, 0.05) 0%, transparent 70%),
+        var(--color-bg-primary);
+    }
+
+    .about-hero-bg canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about-hero-content .hero-title {
+      margin-bottom: var(--space-xl);
+    }
+
+    .about-hero-content .hero-description {
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-2xl);
+      text-align: center;
+    }
+
+    /* ========== STORY SECTION ========== */
+    .about-story {
+      padding: var(--space-section) 0;
+    }
+
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4xl);
+      align-items: center;
+    }
+
+    .about-story-text .story-paragraph {
+      font-size: var(--fs-md);
+      color: var(--color-text-secondary);
+      line-height: 1.85;
+      margin-bottom: var(--space-xl);
+    }
+
+    .about-story-text .story-paragraph:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-story-visual {
+      position: relative;
+    }
+
+    .about-story-visual .about-portrait {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ========== PROCESS SECTION ========== */
+    .about-process {
+      padding: var(--space-section) 0;
+      background: var(--color-bg-secondary);
+      position: relative;
+    }
+
+    .about-process::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    }
+
+    .about-process-header {
+      text-align: center;
+      margin-bottom: var(--space-4xl);
+    }
+
+    .about-process-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+    }
+
+    .process-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      position: relative;
+      transition: all var(--duration-normal) var(--ease-out);
+      overflow: hidden;
+    }
+
+    .process-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .process-bg-number {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      font-family: var(--font-display);
+      font-size: 8rem;
+      font-weight: var(--fw-extrabold);
+      line-height: 1;
+      background: var(--color-accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.05;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+      transition: all var(--duration-slow) var(--ease-out);
+    }
+
+    .process-card:hover .process-bg-number {
+      opacity: 0.12;
+      transform: scale(1.05) translate(-4px, 4px);
+    }
+
+    .process-card h3,
+    .process-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-sm);
+    }
+
+    .process-card p {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========== BENEFITS SECTION ========== */
+    .about-benefits {
+      padding: var(--space-section) 0;
+    }
+
+    .about-benefits-header {
+      text-align: center;
+      margin-bottom: var(--space-4xl);
+    }
+
+    .about-benefits-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+    }
+
+    .benefit-card {
+      display: flex;
+      gap: var(--space-xl);
+      padding: var(--space-2xl);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-card);
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .benefit-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-3px);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-lg);
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--color-accent-1);
+    }
+
+    .benefit-content h3 {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-xs);
+    }
+
+    .benefit-content p {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========== TECH STACK ========== */
+    .about-tech {
+      padding: var(--space-section) 0;
+      background: var(--color-bg-secondary);
+      position: relative;
+    }
+
+    .about-tech::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+    }
+
+    .about-tech-header {
+      text-align: center;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .about-tech-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tech-badge {
+      padding: 0.5rem 1.2rem;
+      border-radius: var(--radius-full);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--color-text-secondary);
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .tech-badge:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      color: var(--color-text-primary);
+      background: rgba(139, 92, 246, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* ========== CLIENTS SECTION ========== */
+    .about-clients {
+      padding: var(--space-section) 0;
+    }
+
+    .about-clients-header {
+      text-align: center;
+      margin-bottom: var(--space-4xl);
+    }
+
+    .about-clients-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+
+    .client-card {
+      text-align: center;
+      padding: var(--space-2xl);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-card);
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .client-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .client-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-lg);
+      background: var(--color-accent-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-lg);
+      color: white;
+    }
+
+    .client-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-sm);
+    }
+
+    .client-card p {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .about-cta {
+      padding: var(--space-section) 0;
+      background: var(--color-bg-secondary);
+      position: relative;
+      text-align: center;
+    }
+
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent-1), var(--color-accent-3), transparent);
+    }
+
+    .about-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-cta-content .section-title {
+      margin-bottom: var(--space-md);
+    }
+
+    .about-cta-content .section-subtitle {
+      margin: 0 auto var(--space-3xl);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clients-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero {
+        min-height: auto;
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/png" href="assets/FS%20logo.png" />
+</head>
+
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Cursor glow effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="assets/FS%20logo.png" alt="Fuxa Studio Logo"></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Domů</a>
+        <a href="about.html" class="static-active" style="color: var(--color-text-primary);">O mně</a>
+        <a href="projects.html">Projekty</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="contact.html#form" class="nav-cta">Domluvit spolupráci</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="about-hero" id="about">
+    <div class="about-hero-bg">
+      <canvas id="aboutBgCanvas"></canvas>
+    </div>
+
+    <div class="container about-hero-content">
+      <h1 class="hero-title">
+        <span class="line">
+          Pomáhám firmám <span class="gradient-text">růst online</span>
+        </span>
+      </h1>
+
+      <p class="hero-description">
+        Tvořím moderní webové stránky zaměřené na výkon, design a reálné výsledky pro vaše podnikání.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== MY STORY ========== -->
+  <section class="about-story" id="story">
+    <div class="container">
+      <div class="about-story-grid">
+        <div class="about-story-text reveal">
+          <span class="section-label">O mně</span>
+          <h2 class="section-title">Přetvářím nápady <span class="gradient-text">v elegantní řešení</span></h2>
+          <p class="story-paragraph">
+            Jsem full-stack developer s citem pro estetiku, který se specializuje na tvorbu elegantních a přehledných
+            webových stránek. Zaměřuji se na přetváření nápadů do funkčních řešení.
+          </p>
+          <p class="story-paragraph">
+            Ve všem, co dělám, kladu důraz na výkon a použitelnost. Pevně věřím, že web by měl nejen perfektně fungovat,
+            ale také dobře vypadat.
+          </p>
+        </div>
+        <div class="about-story-visual reveal reveal-delay-2">
+          <div class="about-portrait">
+            <img src="assets/portrait.png" alt="Pavel Fuxa — Web Developer" />
+          </div>
+          <div class="about-floating-badge">Otevřený spolupráci</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="about-process" id="process">
+    <div class="container">
+      <div class="about-process-header">
+        <span class="section-label no-line" style="justify-content: center;">Jak pracuji</span>
+        <h2 class="section-title">Od nápadu k <span class="gradient-text">hotovému webu</span></h2>
+
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <div class="process-bg-number">01</div>
+          <h3>Analýza</h3>
+          <p>Pochopím vaše cíle, cílovou skupinu a požadavky na web. Zjistím, co potřebujete, aby byl výsledek přesně na
+            míru.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-1">
+          <div class="process-bg-number">02</div>
+          <h3>Design</h3>
+          <p>Navrhnu čistý a moderní vizuál, který ladí s vaší značkou. Důraz kladu na přehlednost a uživatelský
+            zážitek.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-2">
+          <div class="process-bg-number">03</div>
+          <h3>Vývoj</h3>
+          <p>Přetvořím návrh v živý web s čistým kódem. Stavím na moderních technologiích pro maximální rychlost a
+            spolehlivost.</p>
+        </div>
+        <div class="process-card reveal reveal-delay-3">
+          <div class="process-bg-number">04</div>
+          <h3>Optimalizace</h3>
+          <p>Otestuji výkon, přístupnost a SEO. Zajistím, že web funguje perfektně na všech zařízeních a je připraven na
+            spuštění.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS ========== -->
+  <section class="about-benefits" id="benefits">
+    <div class="container">
+      <div class="about-benefits-header">
+        <span class="section-label no-line" style="justify-content: center;">Co získáte</span>
+        <h2 class="section-title">Proč spolupracovat <span class="gradient-text">se mnou</span></h2>
+        <p class="section-subtitle">Zaměřuji se na kvalitu a výsledky, které vám přinesou reálnou hodnotu.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Rychlý a spolehlivý web</h3>
+            <p>Stavím weby, které jsou rychlé, stabilní a fungují bez problémů na mobilu i počítači.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-card reveal reveal-delay-1">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Čistý a moderní design</h3>
+            <p>Dělám design, který je čistý, přehledný a dává smysl. Bez zbytečností navíc.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card reveal reveal-delay-2">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Uživatelský zážitek</h3>
+            <p>Záleží mi na tom, aby se na webu každý rychle zorientoval a snadno našel, co potřebuje.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card reveal reveal-delay-3">
+          <div class="benefit-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="20" x2="12" y2="10" />
+              <line x1="18" y1="20" x2="18" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="16" />
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Cíl je jasný</h3>
+            <p>Každý projekt má jasný cíl. Pomoci vám získat kontakt, zákazníka nebo objednávku.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TECHNOLOGIES ========== -->
+  <section class="about-tech" id="tech">
+    <div class="container">
+      <div class="about-tech-header">
+        <span class="section-label no-line" style="justify-content: center;">Technologie</span>
+        <h2 class="section-title">Nástroje, které <span class="gradient-text">používám</span></h2>
+      </div>
+
+      <div class="tech-list">
+        <span class="tech-badge">HTML5</span>
+        <span class="tech-badge">CSS3</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">Next.js</span>
+        <span class="tech-badge">Node.js</span>
+        <span class="tech-badge">Framer</span>
+        <span class="tech-badge">Figma</span>
+        <span class="tech-badge">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHO I WORK WITH ========== -->
+  <section class="about-clients" id="clients">
+    <div class="container">
+      <div class="about-clients-header">
+        <span class="section-label no-line" style="justify-content: center;">S kým pracuji</span>
+        <h2 class="section-title">Ideální <span class="gradient-text">spolupráce</span></h2>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-card reveal">
+          <div class="client-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3>Startupy</h3>
+          <p>Potřebujete rychle kvalitní web, který udělá dojem na investory i zákazníky? Pomohu vám se odlišit.</p>
+        </div>
+
+        <div class="client-card reveal reveal-delay-1">
+          <div class="client-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          </div>
+          <h3>Firmy</h3>
+          <p>Tvořím weby pro firmy, které chtějí být víc vidět a získávat nové zákazníky. Ať už máte kavárnu, službu
+            nebo lokální byznys.
+          </p>
+        </div>
+
+        <div class="client-card reveal reveal-delay-2">
+          <div class="client-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3>Podnikatelé</h3>
+          <p>Pomůžu vám s webem pro osobní značku, portfolio nebo landing page. Tak, abyste působili profesionálně a
+            důvěryhodně.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="about-cta" id="cta">
+    <div class="container">
+      <div class="about-cta-content">
+        <span class="section-label no-line" style="justify-content: center;">Připraveni?</span>
+        <h2 class="section-title">Pojďme společně vytvořit <span class="gradient-text">něco skvělého</span></h2>
+        <p class="section-subtitle">Máte nápad na projekt? Napište mi a společně ho proměníme v realitu.</p>
+        <a href="contact.html#form" class="btn-primary" id="aboutCtaBtn">
+          Domluvit spolupráci
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer" style="padding-top: var(--space-4xl);">
+    <div class="footer-glow"></div>
+    <div class="container">
+
+      <!-- Footer Main Grid -->
+      <div class="footer-grid">
+
+        <!-- Left: Brand & Contact -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Fuxa<span class="footer-logo-accent">Studio</span></a>
+          <p class="footer-name">Pavel Fuxa</p>
+          <div class="footer-contact-list">
+            <a href="tel:+420 736 131 410" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +420 736 131 410
+            </a>
+            <a href="mailto:fuxa@studio.cz" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              fuxa@studio.cz
+            </a>
+          </div>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="footer-nav">
+          <h4 class="footer-heading">Navigace</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link">Domů</a></li>
+            <li><a href="about.html" class="footer-nav-link">O mně</a></li>
+            <li><a href="projects.html" class="footer-nav-link">Projekty</a></li>
+            <li><a href="contact.html" class="footer-nav-link">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Social -->
+        <div class="footer-social-col">
+          <h4 class="footer-heading">Sociální sítě</h4>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Facebook" id="footerFacebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram" id="footerInstagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Pavel Fuxa. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+  <script>
+    // ==== Interactive Flowing Particles Background ====
+    // Unique to About page: soft flowing dots that gently attract toward the mouse
+    (function () {
+      const canvas = document.getElementById('aboutBgCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const hero = document.getElementById('about');
+
+      let width, height;
+      let particles = [];
+      const mouse = { x: -1000, y: -1000, radius: 200 };
+
+      function resize() {
+        width = hero.offsetWidth;
+        height = hero.offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initParticles();
+      }
+
+      function initParticles() {
+        particles = [];
+        const density = window.innerWidth < 768 ? 25000 : 14000;
+        const count = Math.floor((width * height) / density);
+
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = Math.random() * 0.3 + 0.1;
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            originX: 0,
+            originY: 0,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            radius: Math.random() * 2 + 0.5,
+            opacity: Math.random() * 0.4 + 0.15
+          });
+        }
+        // Store origin for gentle drift
+        particles.forEach(p => { p.originX = p.x; p.originY = p.y; });
+      }
+
+      function update() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach(p => {
+          // Slow natural drift
+          p.x += p.vx;
+          p.y += p.vy;
+
+          // Soft bounds wrap-around
+          if (p.x < -10) p.x = width + 10;
+          if (p.x > width + 10) p.x = -10;
+          if (p.y < -10) p.y = height + 10;
+          if (p.y > height + 10) p.y = -10;
+
+          // Mouse attraction — gentle pull toward cursor
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius && dist > 0) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            p.x += (dx / dist) * force * 0.8;
+            p.y += (dy / dist) * force * 0.8;
+          }
+
+          // Draw dot with per-particle opacity
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(6, 182, 212, ${p.opacity})`;
+          ctx.fill();
+        });
+
+        // Subtle connecting lines (shorter range, very faint)
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 90) {
+              const opacity = (1 - dist / 90) * 0.12;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      window.addEventListener('resize', resize);
+
+      hero.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      hero.addEventListener('mouseleave', () => {
+        mouse.x = -1000;
+        mouse.y = -1000;
+      });
+
+      resize();
+      update();
+    })();
+  </script>
+</body>
+
+</html>
