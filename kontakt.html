@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt — poptávka tvorby webových stránek | Fuxa Studio</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <title>Kontakt — Poptávka tvorby webových stránek | Fuxa Studio</title>
   <meta name="description"
     content="Kontaktujte Pavla Fuxu a pojďme společně vytvořit váš nový web. Odpovím do 24 hodin. Moderní webové stránky, grafický design a digitální řešení na míru." />
   <meta name="author" content="Pavel Fuxa" />
@@ -18,19 +19,20 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fuxastudio.cz/kontakt.html" />
-  <meta property="og:title" content="Kontakt — poptávka tvorby webových stránek | Fuxa Studio" />
+  <meta property="og:title" content="Kontakt — Poptávka tvorby webových stránek | Fuxa Studio" />
   <meta property="og:description" content="Kontaktujte Pavla Fuxu a pojďme společně vytvořit váš nový web. Odpovím do 24 hodin. Moderní webové stránky, grafický design a digitální řešení na míru." />
-  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
+  <meta property="og:image:alt" content="Pavel Fuxa — Fuxa Studio, tvorba webových stránek na míru" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:site_name" content="Fuxa Studio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kontakt — poptávka tvorby webových stránek | Fuxa Studio" />
+  <meta name="twitter:title" content="Kontakt — Poptávka tvorby webových stránek | Fuxa Studio" />
   <meta name="twitter:description" content="Kontaktujte Pavla Fuxu — freelance web developera. Odpovím do 24 hodin." />
-  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,7 +42,6 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <style>
     /* ========== CONTACT PAGE — HERO BACKGROUND ========== */
@@ -285,27 +286,35 @@
     }
   </style>
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "@id": "https://fuxastudio.cz/kontakt.html",
-    "name": "Kontakt — Fuxa Studio",
-    "description": "Kontaktní stránka Fuxa Studio — Pavel Fuxa, freelance web developer",
-    "url": "https://fuxastudio.cz/kontakt.html",
-    "mainEntity": { "@id": "https://fuxastudio.cz/#person" }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Domů", "item": "https://fuxastudio.cz/" },
+          { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://fuxastudio.cz/kontakt.html" }
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "https://fuxastudio.cz/kontakt.html",
+        "name": "Kontakt — Fuxa Studio",
+        "description": "Kontaktní stránka Fuxa Studio — Pavel Fuxa, freelance web developer",
+        "url": "https://fuxastudio.cz/kontakt.html",
+        "mainEntity": { "@id": "https://fuxastudio.cz/#person" }
+      }
+    ]
   }
   </script>
 </head>
 
 <body>
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Cursor glow effect -->
-  <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
@@ -327,13 +336,15 @@
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- ========== HERO ========== -->
   <section class="contact-hero" id="contact">
@@ -454,8 +465,7 @@
               <div class="form-group">
                 <label for="formPhone" class="form-label" data-i18n="form.phone.label">Telefonní číslo</label>
                 <input type="tel" name="phone" id="formPhone" placeholder="+420 736 131 410" required
-                  data-i18n-placeholder="form.phone.placeholder"
-                  oninput="this.value = this.value.replace(/[^0-9\s\+\-\(\)]/g, '')" />
+                  data-i18n-placeholder="form.phone.placeholder" />
               </div>
               <div class="form-group">
                 <label for="formMessage" class="form-label" data-i18n="form.message.label">Váš projekt</label>
@@ -480,8 +490,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ========== FOOTER ========== -->
-  <footer class="footer" id="footer" style="padding-top: var(--space-4xl);">
+  <footer class="footer" id="footer">
     <div class="footer-glow"></div>
     <div class="container">
 

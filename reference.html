@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <title>Reference klientů — Hodnocení spolupráce | Fuxa Studio</title>
   <meta name="description"
     content="Co říkají klienti o spolupráci s Fuxa Studio? Přečtěte si reference a hodnocení od spokojených zákazníků, kteří svěřili svůj web do mých rukou." />
@@ -20,9 +21,10 @@
   <meta property="og:url" content="https://fuxastudio.cz/reference.html" />
   <meta property="og:title" content="Reference klientů — Hodnocení spolupráce | Fuxa Studio" />
   <meta property="og:description" content="Co říkají klienti o spolupráci s Fuxa Studio? Přečtěte si reference a hodnocení od spokojených zákazníků, kteří svěřili svůj web do mých rukou." />
-  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
+  <meta property="og:image:alt" content="Pavel Fuxa — Fuxa Studio, tvorba webových stránek na míru" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:site_name" content="Fuxa Studio" />
 
@@ -30,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Reference klientů — Hodnocení spolupráce | Fuxa Studio" />
   <meta name="twitter:description" content="Reference a hodnocení klientů o spolupráci s Fuxa Studio — Pavel Fuxa." />
-  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,6 +43,7 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
   <style>
     /* ========== REFERENCES SECTION ========== */
@@ -57,129 +60,6 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-xl);
-    }
-
-    .reference-card {
-      display: flex;
-      flex-direction: column;
-      background: var(--color-bg-card);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: clamp(1rem, 5vw, var(--space-2xl));
-      min-width: 0;
-      transition: all var(--duration-normal) var(--ease-out);
-    }
-
-    .reference-card:hover {
-      border-color: var(--color-border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .reference-quote-icon {
-      color: var(--color-accent-1);
-      margin-bottom: var(--space-lg);
-      opacity: 0.65;
-    }
-
-    .reference-text {
-      font-size: var(--fs-sm);
-      color: var(--color-text-secondary);
-      line-height: 1.8;
-      flex: 1;
-      margin-bottom: var(--space-xl);
-      overflow-wrap: break-word;
-      word-break: break-word;
-    }
-
-    .reference-divider {
-      height: 1px;
-      background: var(--color-border);
-      margin-bottom: var(--space-xl);
-    }
-
-    .reference-footer {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      margin-bottom: var(--space-xl);
-    }
-
-    .reference-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      object-fit: contain;
-      background: var(--color-bg-secondary);
-      flex-shrink: 0;
-    }
-
-    .reference-logo-placeholder {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      background: var(--color-bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-text-muted);
-      flex-shrink: 0;
-    }
-
-    .reference-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .reference-name {
-      font-family: var(--font-display);
-      font-size: var(--fs-base);
-      font-weight: var(--fw-bold);
-      color: var(--color-text-primary);
-      margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .reference-company {
-      font-size: var(--fs-xs);
-      color: var(--color-text-muted);
-      font-weight: var(--fw-medium);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .reference-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      padding: 0.55rem 1.1rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--color-border);
-      background: transparent;
-      color: var(--color-text-secondary);
-      font-size: var(--fs-sm);
-      font-weight: var(--fw-medium);
-      font-family: var(--font-primary);
-      text-decoration: none;
-      transition: all var(--duration-fast) var(--ease-out);
-      cursor: pointer;
-      align-self: flex-start;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .reference-btn:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      color: var(--color-text-primary);
-      background: rgba(255, 255, 255, 0.05);
     }
 
     /* ========== CTA ========== */
@@ -207,28 +87,6 @@
       z-index: 2;
     }
 
-    .cta-aether-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .cta-fade {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(
-        180deg,
-        var(--color-bg-primary) 0%,
-        rgba(10, 10, 15, 0.05) 50%,
-        var(--color-bg-primary) 100%
-      );
-    }
-
     /* ========== RESPONSIVE ========== */
     @media (max-width: 1024px) {
       .references-grid {
@@ -242,29 +100,55 @@
       }
     }
 
+    @media (max-width: 600px) {
+      #hero .hero-title {
+        text-align: center;
+      }
+    }
+
   </style>
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://fuxastudio.cz/reference.html",
-    "name": "Reference klientů — Fuxa Studio",
-    "description": "Reference a hodnocení klientů spolupráce s Pavel Fuxou — Fuxa Studio",
-    "url": "https://fuxastudio.cz/reference.html",
-    "about": { "@id": "https://fuxastudio.cz/#person" },
-    "inLanguage": "cs-CZ"
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Domů", "item": "https://fuxastudio.cz/" },
+          { "@type": "ListItem", "position": 2, "name": "Reference", "item": "https://fuxastudio.cz/reference.html" }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://fuxastudio.cz/reference.html",
+        "name": "Reference klientů — Fuxa Studio",
+        "description": "Reference a hodnocení klientů spolupráce s Pavel Fuxou — Fuxa Studio",
+        "url": "https://fuxastudio.cz/reference.html",
+        "about": { "@id": "https://fuxastudio.cz/#person" },
+        "inLanguage": "cs-CZ"
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "So spoluprácou som veľmi spokojná, všetko bolo urobené podľa našich predstáv, dokonca aj texty prvých blogov. Ďakujeme.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Ivana Lencesova"
+        },
+        "itemReviewed": { "@id": "https://fuxastudio.cz/#service" }
+      }
+    ]
   }
   </script>
 </head>
 
 <body>
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Cursor glow effect -->
-  <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
@@ -286,13 +170,15 @@
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
@@ -365,8 +251,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ========== FOOTER ========== -->
-  <footer class="footer" id="footer" style="padding-top: var(--space-4xl);">
+  <footer class="footer" id="footer">
     <div class="footer-glow"></div>
     <div class="container">
 
@@ -444,31 +332,10 @@
 
   <script src="js/translations.js"></script>
   <script src="js/wave-hero.js"></script>
+  <script src="js/smoke-shader.js"></script>
   <script src="js/main.js"></script>
   <script>initWaveHero('waveHeroCanvas', 'hero');</script>
-  <script>
-  (function initCtaSmoke() {
-    var canvas = document.getElementById('ctaAetherFlow');
-    if (!canvas) return;
-    var gl = canvas.getContext('webgl2');
-    if (!gl) { canvas.style.display = 'none'; return; }
-    var VS = '#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}';
-    var FS = '#version 300 es\nprecision highp float;\nout vec4 O;\nuniform float time;\nuniform vec2 resolution;\nuniform vec3 u_color;\n#define FC gl_FragCoord.xy\n#define R resolution\n#define T (time+660.)\nfloat rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}\nfloat noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}\nfloat fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}\nvoid main(){vec2 uv=(FC-.5*R)/R.y;vec3 col=vec3(1);uv.x+=.25;uv*=vec2(2,1);float n=fbm(uv*.28-vec2(T*.01,0));n=noise(uv*3.+n*2.);col.r-=fbm(uv+vec2(0,T*.015)+n);col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));col=mix(vec3(.08),col,min(time*.1,1.));col=clamp(col,.08,1.);O=vec4(col,1);}';
-    function mkShader(type,src){var sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){gl.deleteShader(sh);return null;}return sh;}
-    var vs=mkShader(gl.VERTEX_SHADER,VS),fs=mkShader(gl.FRAGMENT_SHADER,FS);
-    if(!vs||!fs)return;
-    var prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);
-    if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;
-    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,1,-1,-1,1,1,1,-1]),gl.STATIC_DRAW);
-    var posLoc=gl.getAttribLocation(prog,'position');gl.enableVertexAttribArray(posLoc);gl.vertexAttribPointer(posLoc,2,gl.FLOAT,false,0,0);
-    var uRes=gl.getUniformLocation(prog,'resolution'),uTime=gl.getUniformLocation(prog,'time'),uColor=gl.getUniformLocation(prog,'u_color');
-    var t0=performance.now();
-    function resize(){var s=document.getElementById('cta'),dpr=Math.max(1,window.devicePixelRatio||1),w=s.offsetWidth,h=s.offsetHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';gl.viewport(0,0,canvas.width,canvas.height);}
-    window.addEventListener('resize',resize,{passive:true});resize();
-    function render(){var now=(performance.now()-t0)*.001;gl.useProgram(prog);gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.uniform2f(uRes,canvas.width,canvas.height);gl.uniform1f(uTime,now);gl.uniform3fv(uColor,[0,0,0]);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(render);}
-    requestAnimationFrame(render);
-  })();
-  </script>
+  <script>initSmokeShader('ctaAetherFlow', 'cta');</script>
 </body>
 
 </html>

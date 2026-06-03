@@ -270,6 +270,10 @@ button {
 .reveal-delay-3 { transition-delay: 300ms; }
 .reveal-delay-4 { transition-delay: 400ms; }
 
+.section-btn-wrap {
+  margin-top: var(--space-xl);
+}
+
 
 /* ================================
    NAVIGATION
@@ -341,6 +345,10 @@ button {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.static-active {
+  color: var(--color-text-primary);
 }
 
 .nav-cta {
@@ -742,6 +750,12 @@ button {
   box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
+.project-card-overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
 .project-image {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -880,6 +894,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  margin-top: var(--space-xl);
 }
 
 .contact-link {
@@ -1178,10 +1193,10 @@ button {
 
   .navbar.menu-active,
   .navbar.scrolled.menu-active {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: transparent !important;
-    transition: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: transparent;
+    transition: none;
   }
 
   .nav-links {
@@ -1380,4 +1395,170 @@ button {
   .lang-switcher {
     margin-right: var(--space-md);
   }
+}
+
+/* ================================
+   ACCESSIBILITY
+   ================================ */
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* nav-toggle resets outline — restore it */
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 6px;
+}
+
+/* ================================
+   REFERENCE CARDS (shared)
+   ================================ */
+.reference-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1rem, 5vw, var(--space-2xl));
+  min-width: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.reference-card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.reference-quote-icon {
+  color: var(--color-accent-1);
+  margin-bottom: var(--space-lg);
+  opacity: 0.65;
+}
+
+.reference-text {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  flex: 1;
+  margin-bottom: var(--space-xl);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.reference-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin-bottom: var(--space-xl);
+}
+
+.reference-footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.reference-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  object-fit: contain;
+  background: var(--color-bg-secondary);
+  flex-shrink: 0;
+}
+
+.reference-logo-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.reference-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.reference-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reference-company {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reference-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  font-family: var(--font-primary);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out);
+  cursor: pointer;
+  align-self: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.reference-btn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================================
+   CTA SMOKE CANVAS (shared)
+   ================================ */
+.cta-aether-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cta-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-primary) 0%,
+    rgba(10, 10, 15, 0.05) 50%,
+    var(--color-bg-primary) 100%
+  );
 }

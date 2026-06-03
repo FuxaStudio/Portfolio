@@ -1,0 +1,114 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Fuxa Studio Logo" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "Fuxa Studio Logo" [ref=e5]
+      - group "Language / Jazyk" [ref=e6]:
+        - button "Čeština" [ref=e7] [cursor=pointer]: CS
+        - button "English" [ref=e8] [cursor=pointer]: EN
+      - button "Toggle navigation" [ref=e9] [cursor=pointer]
+  - heading "O Mně" [level=1] [ref=e16]
+  - generic [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]: O mně
+      - heading "Přetvářím nápady v elegantní řešení" [level=2] [ref=e22]
+      - paragraph [ref=e23]: Jsem Pavel Fuxa, web developer na volné noze. Spojuji programování s grafickým cítěním, takže weby nejen naprogramuji, ale taky navrhnu tak, aby dávaly smysl a dobře vypadaly.
+      - paragraph [ref=e24]: K webům jsem se dostal přirozeně. Vystudoval jsem grafiku a postupně mě začalo lákat nejen weby navrhovat, ale rovnou je i stavět, a dělat to po svém, na sebe. Spojení designu a kódu mi dává smysl. Nejsem grafik, co předá návrh a dál ho neřeší, ani kodér, kterému je vzhled jedno.
+      - paragraph [ref=e25]: Co ode mě můžete čekat? Přehlednou komunikaci a web postavený na míru místo přetažené šablony. Důraz kladu na to, aby byl výsledek rychlý, funkční a dobře použitelný. Po předání nezmizím. Web je pro mě začátek spolupráce, ne konec.
+    - img "Pavel Fuxa — Web Developer" [ref=e28]
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]: Jak pracuji
+      - heading "Od nápadu k hotovému webu" [level=2] [ref=e33]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - heading "Analýza" [level=3] [ref=e37]
+          - paragraph [ref=e38]: Pochopím vaše cíle, cílovou skupinu a požadavky na web. Zjistím, co potřebujete, aby byl výsledek přesně na míru.
+        - generic [ref=e40]: "01"
+      - generic [ref=e42]:
+        - generic [ref=e44]: "02"
+        - generic [ref=e46]:
+          - heading "Design" [level=3] [ref=e47]
+          - paragraph [ref=e48]: Navrhnu čistý a moderní vizuál, který ladí s vaší značkou. Důraz kladu na přehlednost a uživatelský zážitek.
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - heading "Vývoj" [level=3] [ref=e51]
+          - paragraph [ref=e52]: Přetvořím návrh v živý web s čistým kódem. Stavím na moderních technologiích pro maximální rychlost a spolehlivost.
+        - generic [ref=e54]: "03"
+      - generic [ref=e56]:
+        - generic [ref=e58]: "04"
+        - generic [ref=e59]:
+          - heading "Optimalizace" [level=3] [ref=e60]
+          - paragraph [ref=e61]: Otestuji výkon, přístupnost a SEO. Zajistím, že web funguje perfektně na všech zařízeních a je připraven na spuštění.
+  - generic [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: Technologie
+      - heading "Nástroje, které používám" [level=2] [ref=e66]
+    - generic [ref=e67]:
+      - generic [ref=e68]: HTML5
+      - generic [ref=e69]: CSS3
+      - generic [ref=e70]: JavaScript
+      - generic [ref=e71]: React
+      - generic [ref=e72]: Next.js
+      - generic [ref=e73]: Node.js
+      - generic [ref=e74]: Framer
+      - generic [ref=e75]: Figma
+      - generic [ref=e76]: Git
+  - generic [ref=e79]:
+    - generic [ref=e80]: Připraveni?
+    - heading "Máte nápad na web?" [level=2] [ref=e81]
+    - paragraph [ref=e82]: Napište mi, ozvu se do 24 hodin.
+    - link "Domluvit spolupráci" [ref=e83] [cursor=pointer]:
+      - /url: kontakt.html#form
+      - generic [ref=e84]: Domluvit spolupráci
+      - img [ref=e85]
+  - contentinfo [ref=e87]:
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - link "FuxaStudio" [ref=e92] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=e93]: Pavel Fuxa
+          - generic [ref=e94]:
+            - link "+420 736 131 410" [ref=e95] [cursor=pointer]:
+              - /url: tel:+420736131410
+              - img [ref=e96]
+              - text: +420 736 131 410
+            - link "fuxa@fuxastudio.cz" [ref=e98] [cursor=pointer]:
+              - /url: mailto:fuxa@fuxastudio.cz
+              - img [ref=e99]
+              - text: fuxa@fuxastudio.cz
+          - paragraph [ref=e102]: "IČO: 29618843"
+        - generic [ref=e103]:
+          - heading "Navigace" [level=4] [ref=e104]
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - link "Domů" [ref=e107] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=e108]:
+              - link "O mně" [ref=e109] [cursor=pointer]:
+                - /url: o-mne.html
+            - listitem [ref=e110]:
+              - link "Projekty" [ref=e111] [cursor=pointer]:
+                - /url: projekty.html
+            - listitem [ref=e112]:
+              - link "Reference" [ref=e113] [cursor=pointer]:
+                - /url: reference.html
+            - listitem [ref=e114]:
+              - link "Kontakt" [ref=e115] [cursor=pointer]:
+                - /url: kontakt.html
+        - generic [ref=e116]:
+          - heading "Sociální sítě" [level=4] [ref=e117]
+          - generic [ref=e118]:
+            - link "Facebook" [ref=e119] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61572145793086
+              - img [ref=e120]
+            - link "Instagram" [ref=e122] [cursor=pointer]:
+              - /url: https://www.instagram.com/fuxastudio/
+              - img [ref=e123]
+            - link "LinkedIn" [ref=e125] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/pavel-fuxa-1a1569401/
+              - img [ref=e126]
+      - paragraph [ref=e129]: © 2026 FuxaStudio. All rights reserved.

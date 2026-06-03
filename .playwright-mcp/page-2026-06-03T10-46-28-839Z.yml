@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Fuxa Studio Logo" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "Fuxa Studio Logo" [ref=e5]
+      - group "Language / Jazyk" [ref=e6]:
+        - button "Čeština" [ref=e7] [cursor=pointer]: CS
+        - button "English" [ref=e8] [cursor=pointer]: EN
+      - button "Toggle navigation" [ref=e9] [cursor=pointer]
+  - heading "Moje Projekty" [level=1] [ref=e15]:
+    - generic [ref=e16]: Moje Projekty
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - button "Vše" [ref=e20] [cursor=pointer]
+      - button "Sport" [ref=e21] [cursor=pointer]
+      - button "Restaurace" [ref=e22] [cursor=pointer]
+      - button "Cukrárna" [ref=e23] [cursor=pointer]
+      - button "Kavárna" [ref=e24] [cursor=pointer]
+      - button "Lokální podnik" [ref=e25] [cursor=pointer]
+    - generic [ref=e26]:
+      - article [ref=e27]:
+        - generic: "01"
+        - generic [ref=e28]:
+          - img "Náhled webu Svídnický extrém — web pro sportovní akci" [ref=e29]
+          - img [ref=e32]
+          - link "Přejít na Svídnický extrém" [ref=e34] [cursor=pointer]:
+            - /url: https://svidnickyextrem.cz/
+        - generic [ref=e35]:
+          - generic [ref=e37]: Sport
+          - heading "Svídnický extrém" [level=3] [ref=e38]
+          - paragraph [ref=e39]: Web pro Svídnický extrém. Moderní, přehledné zpracování zaměřené na snadnou orientaci návštěvníků a výraznou prezentaci akce.
+          - link "Přejít na stránku" [ref=e40] [cursor=pointer]:
+            - /url: https://svidnickyextrem.cz/
+            - generic [ref=e41]: Přejít na stránku
+            - img [ref=e42]
+      - article [ref=e44]:
+        - generic: "02"
+        - generic [ref=e45]:
+          - img "Náhled webu Mlýn Janderov — web pro rodinné mlynářství" [ref=e46]
+          - img [ref=e49]
+          - link "Přejít na Mlýn Janderov" [ref=e51] [cursor=pointer]:
+            - /url: https://www.mlyn-janderov.cz/
+        - generic [ref=e52]:
+          - generic [ref=e54]: Lokální podnik
+          - heading "Mlýn Janderov" [level=3] [ref=e55]
+          - paragraph [ref=e56]: Web pro Mlýn Janderov, rodinné mlynářství s tradicí od roku 1540. Přehledné zpracování s důrazem na atmosféru místa, nabídku mouk a krmiv a snadnou orientaci zákazníka.
+          - link "Přejít na stránku" [ref=e57] [cursor=pointer]:
+            - /url: https://www.mlyn-janderov.cz/
+            - generic [ref=e58]: Přejít na stránku
+            - img [ref=e59]
+      - article [ref=e61]:
+        - generic: "03"
+        - generic [ref=e62]:
+          - img "Náhled webu Mattina — web pro kavárnu" [ref=e63]
+          - img [ref=e66]
+          - link "Přejít na Mattina" [ref=e68] [cursor=pointer]:
+            - /url: https://mattina.sk/
+        - generic [ref=e69]:
+          - generic [ref=e71]: Kavárna
+          - heading "Mattina" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Web pro kavárnu Mattina. Zpracovaný ve WordPressu s důrazem na přehlednou nabídku, atmosféru místa a jednoduchou správu obsahu pro klienta.
+          - link "Přejít na stránku" [ref=e74] [cursor=pointer]:
+            - /url: https://mattina.sk/
+            - generic [ref=e75]: Přejít na stránku
+            - img [ref=e76]
+      - article [ref=e78]:
+        - generic: "04"
+        - generic [ref=e79]:
+          - img "Náhled webu El Corazón Auténtico — web pro mexickou restauraci" [ref=e80]
+          - img [ref=e83]
+          - link "Přejít na El Corazón Auténtico" [ref=e85] [cursor=pointer]:
+            - /url: https://fuxastudio.github.io/Mexicka/
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - generic [ref=e88]: Restaurace
+            - generic [ref=e89]: Ukázková práce
+          - heading "El Corazón Auténtico" [level=3] [ref=e90]
+          - paragraph [ref=e91]: Web pro mexickou restauraci s výraznou atmosférou. Procvičil jsem si práci s barevností, prezentaci menu a budování silného vizuálního dojmu značky.
+          - link "Přejít na stránku" [ref=e92] [cursor=pointer]:
+            - /url: https://fuxastudio.github.io/Mexicka/
+            - generic [ref=e93]: Přejít na stránku
+            - img [ref=e94]
+      - article [ref=e96]:
+        - generic: "05"
+        - generic [ref=e97]:
+          - img "Náhled webu Kavárna Karolína — web pro kavárnu" [ref=e98]
+          - img [ref=e101]
+          - link "Přejít na Kavárna Karolína" [ref=e103] [cursor=pointer]:
+            - /url: https://fuxastudio.github.io/Kavarna/
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: Kavárna
+            - generic [ref=e107]: Ukázková práce
+          - heading "Kavárna Karolína" [level=3] [ref=e108]
+          - paragraph [ref=e109]: Redesign konceptu kavárny postavený na čistém kódu (HTML, CSS, JavaScript) a nasazený na GitHub Pages. Cílem byl moderní, útulný vzhled a rychlé načítání.
+          - link "Přejít na stránku" [ref=e110] [cursor=pointer]:
+            - /url: https://fuxastudio.github.io/Kavarna/
+            - generic [ref=e111]: Přejít na stránku
+            - img [ref=e112]
+      - article [ref=e114]:
+        - generic: "06"
+        - generic [ref=e115]:
+          - img "Náhled webu Cukrárna Skuteč — web pro cukrárnu" [ref=e116]
+          - img [ref=e119]
+          - link "Přejít na Cukrárna Skuteč" [ref=e121] [cursor=pointer]:
+            - /url: https://cukrarna.framer.website/
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: Cukrárna
+            - generic [ref=e125]: Ukázková práce
+          - heading "Cukrárna Skuteč" [level=3] [ref=e126]
+          - paragraph [ref=e127]: Hravý a barevný web pro cukrárnu. Zaměřil jsem se na svěží vizuál, čitelnou prezentaci nabídky a přívětivý dojem, který láká na sladké.
+          - link "Přejít na stránku" [ref=e128] [cursor=pointer]:
+            - /url: https://cukrarna.framer.website/
+            - generic [ref=e129]: Přejít na stránku
+            - img [ref=e130]
+      - article [ref=e132]:
+        - generic: "07"
+        - generic [ref=e133]:
+          - img "Náhled webu Aurora — web pro luxusní restauraci" [ref=e134]
+          - img [ref=e137]
+          - link "Přejít na Aurora" [ref=e139] [cursor=pointer]:
+            - /url: https://restauraceaurora.framer.website/
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]: Restaurace
+            - generic [ref=e143]: Ukázková práce
+          - heading "Aurora" [level=3] [ref=e144]
+          - paragraph [ref=e145]: Koncept webu pro luxusní restauraci. Vytvořeno ve Frameru s důrazem na elegantní typografii, plynulé animace a atmosféru, která ladí s prémiovým gastro zážitkem.
+          - link "Přejít na stránku" [ref=e146] [cursor=pointer]:
+            - /url: https://restauraceaurora.framer.website/
+            - generic [ref=e147]: Přejít na stránku
+            - img [ref=e148]
+  - generic [ref=e152]:
+    - generic [ref=e153]: Připraveni?
+    - heading "Máte nápad na web?" [level=2] [ref=e154]
+    - paragraph [ref=e155]: Napište mi, ozvu se do 24 hodin.
+    - link "Domluvit spolupráci" [ref=e156] [cursor=pointer]:
+      - /url: kontakt.html#form
+      - generic [ref=e157]: Domluvit spolupráci
+      - img [ref=e158]
+  - contentinfo [ref=e160]:
+    - generic [ref=e162]:
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - link "FuxaStudio" [ref=e165] [cursor=pointer]:
+            - /url: index.html
+          - paragraph [ref=e166]: Pavel Fuxa
+          - generic [ref=e167]:
+            - link "+420 736 131 410" [ref=e168] [cursor=pointer]:
+              - /url: tel:+420736131410
+              - img [ref=e169]
+              - text: +420 736 131 410
+            - link "fuxa@fuxastudio.cz" [ref=e171] [cursor=pointer]:
+              - /url: mailto:fuxa@fuxastudio.cz
+              - img [ref=e172]
+              - text: fuxa@fuxastudio.cz
+          - paragraph [ref=e175]: "IČO: 29618843"
+        - generic [ref=e176]:
+          - heading "Navigace" [level=4] [ref=e177]
+          - list [ref=e178]:
+            - listitem [ref=e179]:
+              - link "Domů" [ref=e180] [cursor=pointer]:
+                - /url: index.html
+            - listitem [ref=e181]:
+              - link "O mně" [ref=e182] [cursor=pointer]:
+                - /url: o-mne.html
+            - listitem [ref=e183]:
+              - link "Projekty" [ref=e184] [cursor=pointer]:
+                - /url: projekty.html
+            - listitem [ref=e185]:
+              - link "Reference" [ref=e186] [cursor=pointer]:
+                - /url: reference.html
+            - listitem [ref=e187]:
+              - link "Kontakt" [ref=e188] [cursor=pointer]:
+                - /url: kontakt.html
+        - generic [ref=e189]:
+          - heading "Sociální sítě" [level=4] [ref=e190]
+          - generic [ref=e191]:
+            - link "Facebook" [ref=e192] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=61572145793086
+              - img [ref=e193]
+            - link "Instagram" [ref=e195] [cursor=pointer]:
+              - /url: https://www.instagram.com/fuxastudio/
+              - img [ref=e196]
+            - link "LinkedIn" [ref=e198] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/pavel-fuxa-1a1569401/
+              - img [ref=e199]
+      - paragraph [ref=e202]: © 2026 FuxaStudio. All rights reserved.

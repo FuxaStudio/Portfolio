@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>O mně — webový vývojář a designér na volné noze | Fuxa Studio</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <title>O mně — Web designer a developer | Fuxa Studio</title>
   <meta name="description"
     content="Zjistěte více o Pavlu Fuxovi — freelance web developerovi. Kombinuji programování s grafickým designem a tvořím moderní weby na míru, rychlé a funkční." />
   <meta name="author" content="Pavel Fuxa" />
@@ -18,19 +19,20 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fuxastudio.cz/o-mne.html" />
-  <meta property="og:title" content="O mně — webový vývojář a designér na volné noze | Fuxa Studio" />
+  <meta property="og:title" content="O mně — Web designer a developer | Fuxa Studio" />
   <meta property="og:description" content="Zjistěte více o Pavlu Fuxovi — freelance web developerovi. Kombinuji programování s grafickým designem a tvořím moderní weby na míru, rychlé a funkční." />
-  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.png" />
   <meta property="og:image:width" content="1280" />
   <meta property="og:image:height" content="720" />
+  <meta property="og:image:alt" content="Pavel Fuxa — Fuxa Studio, tvorba webových stránek na míru" />
   <meta property="og:locale" content="cs_CZ" />
   <meta property="og:site_name" content="Fuxa Studio" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="O mně — webový vývojář a designér na volné noze | Fuxa Studio" />
+  <meta name="twitter:title" content="O mně — Web designer a developer | Fuxa Studio" />
   <meta name="twitter:description" content="Kombinuji programování s grafickým designem a tvořím moderní weby na míru." />
-  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,15 +43,27 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
 
   <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Domů", "item": "https://fuxastudio.cz/" },
+      { "@type": "ListItem", "position": 2, "name": "O mně", "item": "https://fuxastudio.cz/o-mne.html" }
+    ]
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": "https://fuxastudio.cz/#person",
     "name": "Pavel Fuxa",
-    "url": "https://fuxastudio.cz/o-mne.html",
+    "url": "https://fuxastudio.cz/",
     "jobTitle": "Web Developer",
     "description": "Freelance web developer kombinující programování s grafickým designem. Tvorba moderních, rychlých a funkčních webových stránek na míru.",
     "email": "fuxa@fuxastudio.cz",
@@ -150,16 +164,6 @@
     .about-process {
       padding: var(--space-section) 0;
       position: relative;
-    }
-
-    .about-process::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
     }
 
     .about-process-header {
@@ -317,16 +321,6 @@
       position: relative;
     }
 
-    .about-tech::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--color-border), transparent);
-    }
-
     .about-tech-header {
       text-align: center;
       margin-bottom: var(--space-3xl);
@@ -431,43 +425,11 @@
       text-align: center;
     }
 
-    .about-cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    }
-
     .about-cta-content {
       max-width: 600px;
       margin: 0 auto;
       position: relative;
       z-index: 2;
-    }
-
-    .cta-aether-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .cta-fade {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(
-        180deg,
-        var(--color-bg-primary) 0%,
-        rgba(10, 10, 15, 0.05) 50%,
-        var(--color-bg-primary) 100%
-      );
     }
 
     .about-cta-content .section-title {
@@ -561,12 +523,6 @@
     }
 
     @media (max-width: 768px) {
-      .about-hero {
-        min-height: auto;
-        padding-top: 7rem;
-        padding-bottom: 3rem;
-      }
-
       .about-hero-content .hero-title .line {
         white-space: normal;
       }
@@ -592,15 +548,17 @@
         display: none;
       }
     }
+
+    @media (max-width: 424px) {
+      .about-story-text .section-title span,
+      .about-cta-content .section-title {
+        white-space: normal !important;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Cursor glow effect -->
-  <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
@@ -622,13 +580,15 @@
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- ========== HERO ========== -->
   <section class="about-hero" id="about">
@@ -772,8 +732,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ========== FOOTER ========== -->
-  <footer class="footer" id="footer" style="padding-top: var(--space-4xl);">
+  <footer class="footer" id="footer">
     <div class="footer-glow"></div>
     <div class="container">
 
@@ -856,108 +818,10 @@
 
   <script src="js/translations.js"></script>
   <script src="js/wave-hero.js"></script>
+  <script src="js/smoke-shader.js"></script>
   <script src="js/main.js"></script>
   <script>initWaveHero('aboutBgCanvas', 'about');</script>
-  <script>
-  (function initCtaSmoke() {
-    var canvas = document.getElementById('ctaAetherFlow');
-    if (!canvas) return;
-
-    var gl = canvas.getContext('webgl2');
-    if (!gl) { canvas.style.display = 'none'; return; }
-
-    var VS = '#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}';
-
-    var FS = '#version 300 es\n' +
-      'precision highp float;\n' +
-      'out vec4 O;\n' +
-      'uniform float time;\n' +
-      'uniform vec2 resolution;\n' +
-      'uniform vec3 u_color;\n' +
-      '#define FC gl_FragCoord.xy\n' +
-      '#define R resolution\n' +
-      '#define T (time+660.)\n' +
-      'float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}\n' +
-      'float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}\n' +
-      'float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}\n' +
-      'void main(){\n' +
-      '  vec2 uv=(FC-.5*R)/R.y;\n' +
-      '  vec3 col=vec3(1);\n' +
-      '  uv.x+=.25;\n' +
-      '  uv*=vec2(2,1);\n' +
-      '  float n=fbm(uv*.28-vec2(T*.01,0));\n' +
-      '  n=noise(uv*3.+n*2.);\n' +
-      '  col.r-=fbm(uv+vec2(0,T*.015)+n);\n' +
-      '  col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);\n' +
-      '  col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);\n' +
-      '  col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));\n' +
-      '  col=mix(vec3(.08),col,min(time*.1,1.));\n' +
-      '  col=clamp(col,.08,1.);\n' +
-      '  O=vec4(col,1);\n' +
-      '}';
-
-    function mkShader(type, src) {
-      var sh = gl.createShader(type);
-      gl.shaderSource(sh, src);
-      gl.compileShader(sh);
-      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
-        console.error(gl.getShaderInfoLog(sh));
-        gl.deleteShader(sh); return null;
-      }
-      return sh;
-    }
-
-    var vs = mkShader(gl.VERTEX_SHADER, VS);
-    var fs = mkShader(gl.FRAGMENT_SHADER, FS);
-    if (!vs || !fs) return;
-
-    var prog = gl.createProgram();
-    gl.attachShader(prog, vs); gl.attachShader(prog, fs);
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-      console.error(gl.getProgramInfoLog(prog)); return;
-    }
-
-    var buf = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
-    var posLoc = gl.getAttribLocation(prog, 'position');
-    gl.enableVertexAttribArray(posLoc);
-    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
-
-    var uRes   = gl.getUniformLocation(prog, 'resolution');
-    var uTime  = gl.getUniformLocation(prog, 'time');
-    var uColor = gl.getUniformLocation(prog, 'u_color');
-
-    var color = [0.0, 0.0, 0.0];
-    var t0 = performance.now();
-
-    function resize() {
-      var section = document.getElementById('cta');
-      var dpr = Math.max(1, window.devicePixelRatio || 1);
-      var w = section.offsetWidth, h = section.offsetHeight;
-      canvas.width  = w * dpr; canvas.height = h * dpr;
-      canvas.style.width  = w + 'px';
-      canvas.style.height = h + 'px';
-      gl.viewport(0, 0, canvas.width, canvas.height);
-    }
-    window.addEventListener('resize', resize, { passive: true });
-    resize();
-
-    function render() {
-      var now = (performance.now() - t0) * 0.001;
-      gl.useProgram(prog);
-      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform1f(uTime, now);
-      gl.uniform3fv(uColor, color);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      requestAnimationFrame(render);
-    }
-    requestAnimationFrame(render);
-
-  })();
-  </script>
+  <script>initSmokeShader('ctaAetherFlow', 'cta');</script>
 </body>
 
 </html>

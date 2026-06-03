@@ -15,316 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hide on touch devices
   const isTouchDevice = 'ontouchstart' in window;
 
-  // ---- Interactive Starfield ----
-  (function initStarfield() {
-    const canvas = document.getElementById('heroStars');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const hero = document.getElementById('hero');
-
-    const STAR_COUNT = 180;
-    const CURSOR_RADIUS = 120;       // repulsion zone
-    const CURSOR_FORCE = 8;          // push strength
-    const RETURN_SPEED = 0.03;       // spring-back speed
-    const FRICTION = 0.92;           // velocity damping
-    const LINE_DISTANCE = 100;       // max distance for constellation lines
-    const LINE_OPACITY = 0.12;
-
-    let stars = [];
-    let w, h;
-
-    function resize() {
-      const rect = hero.getBoundingClientRect();
-      w = rect.width;
-      h = rect.height;
-      canvas.width = w * devicePixelRatio;
-      canvas.height = h * devicePixelRatio;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-    }
-
-    function createStar() {
-      return {
-        x: Math.random() * w,
-        y: Math.random() * h,
-        originX: 0,
-        originY: 0,
-        vx: 0,
-        vy: 0,
-        radius: Math.random() * 1.8 + 0.4,
-        opacity: Math.random() * 0.6 + 0.3,
-        twinkleSpeed: Math.random() * 0.02 + 0.005,
-        twinkleOffset: Math.random() * Math.PI * 2,
-        driftX: (Math.random() - 0.5) * 0.15,
-        driftY: (Math.random() - 0.5) * 0.1,
-        hue: Math.random() < 0.3 ? 260 : (Math.random() < 0.5 ? 220 : 190),
-      };
-    }
-
-    function initStars() {
-      stars = [];
-      for (let i = 0; i < STAR_COUNT; i++) {
-        const s = createStar();
-        s.originX = s.x;
-        s.originY = s.y;
-        stars.push(s);
-      }
-    }
-
-    function update(time) {
-      const heroRect = hero.getBoundingClientRect();
-      const mx = mouseX - heroRect.left;
-      const my = mouseY - heroRect.top;
-      const cursorInHero = mx >= 0 && mx <= w && my >= 0 && my <= h && !isTouchDevice;
-
-      for (let i = 0; i < stars.length; i++) {
-        const s = stars[i];
-
-        // Gentle drift
-        s.originX += s.driftX;
-        s.originY += s.driftY;
-
-        // Wrap around edges
-        if (s.originX < -10) s.originX = w + 10;
-        if (s.originX > w + 10) s.originX = -10;
-        if (s.originY < -10) s.originY = h + 10;
-        if (s.originY > h + 10) s.originY = -10;
-
-        // Cursor repulsion
-        if (cursorInHero) {
-          const dx = s.x - mx;
-          const dy = s.y - my;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < CURSOR_RADIUS && dist > 0) {
-            const force = (CURSOR_RADIUS - dist) / CURSOR_RADIUS * CURSOR_FORCE;
-            s.vx += (dx / dist) * force;
-            s.vy += (dy / dist) * force;
-          }
-        }
-
-        // Spring back to origin
-        s.vx += (s.originX - s.x) * RETURN_SPEED;
-        s.vy += (s.originY - s.y) * RETURN_SPEED;
-
-        // Apply friction
-        s.vx *= FRICTION;
-        s.vy *= FRICTION;
-
-        // Move
-        s.x += s.vx;
-        s.y += s.vy;
-
-        // Twinkle
-        s.currentOpacity = s.opacity * (0.6 + 0.4 * Math.sin(time * s.twinkleSpeed + s.twinkleOffset));
-      }
-    }
-
-    function draw(time) {
-      ctx.clearRect(0, 0, w, h);
-
-      // Draw constellation lines between nearby stars
-      for (let i = 0; i < stars.length; i++) {
-        for (let j = i + 1; j < stars.length; j++) {
-          const dx = stars[i].x - stars[j].x;
-          const dy = stars[i].y - stars[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < LINE_DISTANCE) {
-            const opacity = (1 - dist / LINE_DISTANCE) * LINE_OPACITY;
-            ctx.beginPath();
-            ctx.moveTo(stars[i].x, stars[i].y);
-            ctx.lineTo(stars[j].x, stars[j].y);
-            ctx.strokeStyle = `rgba(139, 130, 230, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-
-      // Draw stars
-      for (let i = 0; i < stars.length; i++) {
-        const s = stars[i];
-        const alpha = s.currentOpacity || s.opacity;
-
-        // Glow
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.radius * 3, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${s.hue}, 60%, 75%, ${alpha * 0.15})`;
-        ctx.fill();
-
-        // Core
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${s.hue}, 50%, 90%, ${alpha})`;
-        ctx.fill();
-      }
-    }
-
-    function loop(time) {
-      update(time);
-      draw(time);
-      requestAnimationFrame(loop);
-    }
-
-    resize();
-    initStars();
-    requestAnimationFrame(loop);
-
-    window.addEventListener('resize', () => {
-      const oldW = w;
-      const oldH = h;
-      resize();
-      
-      if (oldW > 0 && oldH > 0) {
-        const scaleX = w / oldW;
-        const scaleY = h / oldH;
-        stars.forEach(s => {
-          s.originX *= scaleX;
-          s.originY *= scaleY;
-          s.x *= scaleX;
-          s.y *= scaleY;
-        });
-      }
-    });
-  })();
-
-  // ---- Interactive Geometry Background for Projects Page ----
-  (function initProjectsBackground() {
-    const canvas = document.getElementById('projectsBgCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const hero = document.getElementById('hero');
-
-    const SHAPE_COUNT = 40;
-    let shapes = [];
-    let w, h;
-
-    function resize() {
-      const rect = hero.getBoundingClientRect();
-      w = rect.width;
-      h = rect.height;
-      canvas.width = w * devicePixelRatio;
-      canvas.height = h * devicePixelRatio;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
-    }
-
-    function createShape() {
-      const types = ['circle', 'triangle', 'square', 'plus'];
-      return {
-        x: Math.random() * w,
-        y: Math.random() * h,
-        size: Math.random() * 20 + 10,
-        type: types[Math.floor(Math.random() * types.length)],
-        rotation: Math.random() * Math.PI * 2,
-        rotSpeed: (Math.random() - 0.5) * 0.02,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5 - 0.2, // upward drift bias
-        opacity: Math.random() * 0.15 + 0.05,
-        parallaxOffset: Math.random() * 0.5 + 0.1,
-        hue: Math.random() < 0.5 ? 260 : (Math.random() < 0.5 ? 220 : 190)
-      };
-    }
-
-    function initShapes() {
-      shapes = [];
-      for (let i = 0; i < SHAPE_COUNT; i++) {
-        shapes.push(createShape());
-      }
-    }
-
-    function update() {
-      const heroRect = hero.getBoundingClientRect();
-      const mx = mouseX - heroRect.left;
-      const my = mouseY - heroRect.top;
-      const cursorInHero = mx >= 0 && mx <= w && my >= 0 && my <= h && !isTouchDevice;
-
-      shapes.forEach(s => {
-        s.x += s.vx;
-        s.y += s.vy;
-        s.rotation += s.rotSpeed;
-
-        if (s.y < -50) s.y = h + 50;
-        if (s.x < -50) s.x = w + 50;
-        if (s.x > w + 50) s.x = -50;
-        if (s.y > h + 50) s.y = -50;
-
-        s.drawX = s.x;
-        s.drawY = s.y;
-
-        // Apply mouse parallax
-        if (cursorInHero) {
-          const dx = (mx - w/2);
-          const dy = (my - h/2);
-          s.drawX -= dx * s.parallaxOffset * 0.1;
-          s.drawY -= dy * s.parallaxOffset * 0.1;
-        }
-      });
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-
-      shapes.forEach(s => {
-        ctx.save();
-        ctx.translate(s.drawX, s.drawY);
-        ctx.rotate(s.rotation);
-        
-        ctx.strokeStyle = `hsla(${s.hue}, 70%, 75%, ${s.opacity})`;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-
-        if (s.type === 'circle') {
-          ctx.arc(0, 0, s.size, 0, Math.PI * 2);
-        } else if (s.type === 'square') {
-          ctx.rect(-s.size/2, -s.size/2, s.size, s.size);
-        } else if (s.type === 'triangle') {
-          ctx.moveTo(0, -s.size);
-          ctx.lineTo(s.size * 0.866, s.size * 0.5);
-          ctx.lineTo(-s.size * 0.866, s.size * 0.5);
-          ctx.closePath();
-        } else if (s.type === 'plus') {
-          ctx.moveTo(-s.size/2, 0);
-          ctx.lineTo(s.size/2, 0);
-          ctx.moveTo(0, -s.size/2);
-          ctx.lineTo(0, s.size/2);
-        }
-        
-        ctx.stroke();
-        ctx.restore();
-      });
-    }
-
-    function loop() {
-      update();
-      draw();
-      requestAnimationFrame(loop);
-    }
-
-    resize();
-    initShapes();
-    requestAnimationFrame(loop);
-
-    window.addEventListener('resize', () => {
-      const oldW = w;
-      const oldH = h;
-      resize();
-
-      if (oldW > 0 && oldH > 0) {
-        const scaleX = w / oldW;
-        const scaleY = h / oldH;
-        shapes.forEach(s => {
-          s.x *= scaleX;
-          s.y *= scaleY;
-        });
-      }
-    });
-  })();
-
-  // ---- Navbar scroll effect + scroll progress ----
+  // ---- Navbar scroll effect ----
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
@@ -340,10 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.contains('active');
     navToggle.classList.toggle('active');
     navLinks.classList.toggle('active');
     navbar.classList.toggle('menu-active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    document.body.style.overflow = !isOpen ? 'hidden' : '';
   });
 
   // Close mobile menu on link click
@@ -352,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.classList.remove('active');
       navLinks.classList.remove('active');
       navbar.classList.remove('menu-active');
+      navToggle.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     });
   });
@@ -428,18 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Parallax effect on hero orbs ----
-  const orbs = document.querySelectorAll('.hero-orb');
-
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (scrolled < window.innerHeight) {
-      orbs.forEach((orb, i) => {
-        const speed = 0.15 + i * 0.05;
-        orb.style.transform = `translateY(${scrolled * speed}px)`;
-      });
-    }
-  }, { passive: true });
+  // ---- Phone input — restrict to numeric characters ----
+  document.querySelectorAll('input[name="phone"]').forEach(input => {
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/[^0-9\s\+\-\(\)]/g, '');
+    });
+  });
 
   // ---- Active nav link highlight ----
   const sections = document.querySelectorAll('section[id]');
@@ -489,8 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      
-      const tiltX = y * -6; // degrees
+
+      const tiltX = y * -6;
       const tiltY = x * 6;
 
       card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
@@ -508,19 +196,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (filterBtns.length > 0 && projectCards.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Remove active class and styles from all buttons
+        // Remove active state from all buttons
         filterBtns.forEach(b => {
           b.classList.remove('active');
           b.style.borderColor = '';
           b.style.background = '';
           b.style.color = '';
+          b.setAttribute('aria-pressed', 'false');
         });
-        
-        // Add active style to clicked button
+
+        // Activate clicked button
         btn.classList.add('active');
         btn.style.borderColor = 'rgba(255,255,255,0.35)';
         btn.style.background = 'rgba(255,255,255,0.07)';
         btn.style.color = 'var(--color-text-primary)';
+        btn.setAttribute('aria-pressed', 'true');
 
         const filterValue = btn.getAttribute('data-filter');
 
@@ -528,8 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const category = card.getAttribute('data-category');
           if (filterValue === 'all' || category === filterValue) {
             card.style.display = '';
-            // ensure it's visible if it was hidden before reveal
-            card.classList.add('visible'); 
+            card.classList.add('visible');
           } else {
             card.style.display = 'none';
           }
@@ -561,99 +250,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 600);
     });
   });
-
-  // ==== Interactive Network Background ====
-  (function initNetworkBackground() {
-    const canvas = document.getElementById('contactNetworkCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const hero = document.getElementById('contact');
-    if (!hero) return;
-
-    let width, height;
-    let particles = [];
-    const mouseRadius = 180;
-
-    function resize() {
-      width = hero.offsetWidth;
-      height = hero.offsetHeight;
-      canvas.width = width;
-      canvas.height = height;
-      initParticles();
-    }
-
-    function initParticles() {
-      particles = [];
-      const density = window.innerWidth < 768 ? 20000 : 12000;
-      const numParticles = Math.floor((width * height) / density);
-
-      for (let i = 0; i < numParticles; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.6,
-          vy: (Math.random() - 0.5) * 0.6,
-          radius: Math.random() * 1.5 + 0.5
-        });
-      }
-    }
-
-    function update() {
-      ctx.clearRect(0, 0, width, height);
-      
-      const heroRect = hero.getBoundingClientRect();
-      const isMouseInHero = mouseX >= heroRect.left && mouseX <= heroRect.right && 
-                            mouseY >= heroRect.top && mouseY <= heroRect.bottom;
-
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        if (isMouseInHero) {
-          const mx = mouseX - heroRect.left;
-          const my = mouseY - heroRect.top;
-          const distance = Math.sqrt(Math.pow(mx - p.x, 2) + Math.pow(my - p.y, 2));
-
-          if (distance < mouseRadius && distance > 0) {
-            const force = (mouseRadius - distance) / mouseRadius;
-            p.x -= ((mx - p.x) / distance) * force * 2;
-            p.y -= ((my - p.y) / distance) * force * 2;
-          }
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-        ctx.fill();
-      });
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 110) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            const opacity = 1 - (distance / 110);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.12})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-
-      requestAnimationFrame(update);
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-    update();
-  })();
 
 });

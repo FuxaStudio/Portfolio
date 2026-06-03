@@ -5,13 +5,13 @@
 window.translations = {
   cs: {
     // Page meta
-    'page.index.title': 'Pavel Fuxa - Web Developer',
+    'page.index.title': 'Tvorba webových stránek na míru — Pavel Fuxa | Fuxa Studio',
     'page.index.meta': 'Full-stack web developer vytvářející moderní, rychlé a funkční webové stránky. Prohlédněte si mé portfolio a objevte projekty, které dávají smysl.',
-    'page.about.title': 'Pavel Fuxa — O mně | Webový developer',
+    'page.about.title': 'O mně — Web designer a developer | Fuxa Studio',
     'page.about.meta': 'Jsem Pavel Fuxa, web developer na volné noze. Spojuji programování s grafickým cítěním — weby nejen naprogramuji, ale taky navrhnu.',
-    'page.projects.title': 'Pavel Fuxa — Moje projekty',
+    'page.projects.title': 'Projekty — Ukázky webů na míru | Fuxa Studio',
     'page.projects.meta': 'Prohlédněte si mé webové a designové projekty. Moderní, rychlé a funkční webové stránky a aplikace.',
-    'page.contact.title': 'Pavel Fuxa — Kontakt a spolupráce',
+    'page.contact.title': 'Kontakt — Poptávka tvorby webových stránek | Fuxa Studio',
     'page.contact.meta': 'Kontaktujte mě a pojďme společně vytvořit něco skvělého. Moderní webové stránky, design a digitální řešení na míru.',
 
     // Navigation
@@ -153,7 +153,7 @@ window.translations = {
     'references.viewAll': 'Zobrazit všechny',
 
     // References page
-    'page.references.title': 'Pavel Fuxa — Reference | Hodnocení klientů',
+    'page.references.title': 'Reference klientů — Hodnocení spolupráce | Fuxa Studio',
     'page.references.meta': 'Co říkají klienti o spolupráci s Fuxa Studio. Přečtěte si reference a hodnocení od spokojených zákazníků.',
     'referencespage.hero.line1': 'Co říkají',
     'referencespage.hero.line2': 'klienti',
@@ -174,13 +174,13 @@ window.translations = {
 
   en: {
     // Page meta
-    'page.index.title': 'Pavel Fuxa — Web Developer',
+    'page.index.title': 'Custom Web Development — Pavel Fuxa | Fuxa Studio',
     'page.index.meta': 'Freelance web developer building modern, fast, and functional websites. Browse my portfolio and discover projects that make sense.',
-    'page.about.title': 'Pavel Fuxa — About Me | Web Developer',
+    'page.about.title': 'About Me — web designer & developer | Fuxa Studio',
     'page.about.meta': "I'm Pavel Fuxa, a freelance web developer. I combine programming with a design eye — I don't just build websites, I design them.",
-    'page.projects.title': 'Pavel Fuxa — My Projects',
+    'page.projects.title': 'Projects — custom website examples | Fuxa Studio',
     'page.projects.meta': 'Browse my web and design projects. Modern, fast, and functional websites and applications.',
-    'page.contact.title': 'Pavel Fuxa — Contact & Collaboration',
+    'page.contact.title': 'Contact — request web development | Fuxa Studio',
     'page.contact.meta': "Get in touch and let's build something great together. Custom websites, design, and tailored digital solutions.",
 
     // Navigation
@@ -322,7 +322,7 @@ window.translations = {
     'references.viewAll': 'View All',
 
     // References page
-    'page.references.title': 'Pavel Fuxa — References | Client Testimonials',
+    'page.references.title': 'Client References — Collaboration Reviews | Fuxa Studio',
     'page.references.meta': 'Read what clients say about working with Fuxa Studio. Testimonials and reviews from satisfied customers.',
     'referencespage.hero.line1': 'What my',
     'referencespage.hero.line2': 'clients say',
