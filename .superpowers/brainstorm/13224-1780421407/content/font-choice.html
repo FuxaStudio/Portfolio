@@ -1,0 +1,74 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@900&family=Bebas+Neue&family=Barlow+Condensed:wght@900&display=swap" rel="stylesheet">
+
+<style>
+  .font-preview {
+    background: #0a0a0a;
+    border-radius: 10px;
+    padding: 20px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 130px;
+    justify-content: center;
+  }
+  .fp-top {
+    line-height: 0.88;
+    color: #fafafa;
+    font-size: clamp(36px, 6vw, 58px);
+    letter-spacing: -1px;
+  }
+  .fp-bottom {
+    line-height: 0.88;
+    color: transparent;
+    font-size: clamp(34px, 5.5vw, 54px);
+    letter-spacing: -1px;
+  }
+</style>
+
+<h2>Jaký font pro obří nadpisy?</h2>
+<p class="subtitle">Font zásadně ovlivňuje charakter celého designu</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="geist" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a; border-radius: 10px 10px 0 0; overflow:hidden;">
+      <div class="font-preview">
+        <div class="fp-top" style="font-family:'Geist',sans-serif; font-weight:900; -webkit-text-stroke:0; color:#fafafa;">Designer</div>
+        <div class="fp-bottom" style="font-family:'Geist',sans-serif; font-weight:900; -webkit-text-stroke:2px #fafafa;">&amp; Developer</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Geist Black (aktuální font webu)</h3>
+      <p>Konzistentní se zbytkem stránky. Moderní, technický charakter.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="bebas" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a; border-radius: 10px 10px 0 0; overflow:hidden;">
+      <div class="font-preview">
+        <div class="fp-top" style="font-family:'Bebas Neue',sans-serif; font-weight:400; letter-spacing:2px; color:#fafafa; font-size:clamp(40px,7vw,68px);">Designer</div>
+        <div class="fp-bottom" style="font-family:'Bebas Neue',sans-serif; font-weight:400; letter-spacing:2px; -webkit-text-stroke:2px #fafafa; font-size:clamp(36px,6.5vw,62px);">&amp; Developer</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Bebas Neue</h3>
+      <p>Úzký, kondenzovaný, velice výrazný. Klasický "velký plakát" styl.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="barlow" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a; border-radius: 10px 10px 0 0; overflow:hidden;">
+      <div class="font-preview">
+        <div class="fp-top" style="font-family:'Barlow Condensed',sans-serif; font-weight:900; letter-spacing:-1px; color:#fafafa;">Designer</div>
+        <div class="fp-bottom" style="font-family:'Barlow Condensed',sans-serif; font-weight:900; letter-spacing:-1px; -webkit-text-stroke:2px #fafafa;">&amp; Developer</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Barlow Condensed Black</h3>
+      <p>Kondenzovaný ale tučnější než Bebas. Silný, atletický vzhled.</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,141 @@
+<style>
+  .hero-mock {
+    background: #0a0a0a;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    font-family: 'Arial Black', 'Impact', sans-serif;
+  }
+  .hero-top-text {
+    font-size: clamp(48px, 10vw, 80px);
+    font-weight: 900;
+    color: #fafafa;
+    letter-spacing: -3px;
+    line-height: 0.9;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .hero-bottom-text {
+    font-size: clamp(44px, 9vw, 76px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px #fafafa;
+    letter-spacing: -3px;
+    line-height: 0.9;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .photo-placeholder {
+    width: 140px;
+    height: 200px;
+    background: linear-gradient(160deg, #3a3020 0%, #2a2218 50%, #1a1a1a 100%);
+    border-radius: 70px 70px 50px 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20px;
+    overflow: hidden;
+  }
+  .photo-head {
+    width: 60px;
+    height: 60px;
+    background: #c4a882;
+    border-radius: 50%;
+  }
+  .hero-label {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #525252;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0 24px;
+  }
+  .hero-sub {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #737373;
+    padding: 0 24px;
+    font-weight: 400;
+  }
+  .hero-cta {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    border: 1px solid #383838;
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: #a1a1a1;
+    margin: 0 24px;
+    width: fit-content;
+  }
+</style>
+
+<h2>Jaké prvky chceš v hero sekci?</h2>
+<p class="subtitle">Vyber layout, který ti sedí nejvíc</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="minimal" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a;">
+      <div class="hero-mock" style="min-height:240px;">
+        <div class="hero-top-text">Designer</div>
+        <div class="photo-placeholder"><div class="photo-head"></div></div>
+        <div class="hero-bottom-text">&amp; Developer</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Čistě typografický</h3>
+      <p>Jen "Designer" nahoře a "&amp; Developer" dole s fotkou. Maximální dopad, žádný rušivý text.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="with-greeting" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a;">
+      <div class="hero-mock" style="min-height:260px; gap: 4px;">
+        <div class="hero-label" style="padding-top:16px;">👋 Ahoj, jsem Pavel</div>
+        <div class="hero-top-text" style="font-size:clamp(40px,8vw,68px);">Designer</div>
+        <div class="photo-placeholder" style="width:120px;height:170px;"><div class="photo-head"></div></div>
+        <div class="hero-bottom-text" style="font-size:clamp(36px,7.5vw,64px);">&amp; Developer</div>
+        <div class="hero-sub" style="padding-bottom:16px;">Tvořím weby, které dávají smysl.</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — S představením</h3>
+      <p>Malé "Ahoj, jsem Pavel" nahoře + krátký tagline dole. Osobnější a přívětivější.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="with-cta" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding:0; background:#0a0a0a;">
+      <div class="hero-mock" style="min-height:280px; gap: 4px;">
+        <div class="hero-label" style="padding-top:16px;">👋 Ahoj, jsem Pavel</div>
+        <div class="hero-top-text" style="font-size:clamp(38px,7.5vw,64px);">Designer</div>
+        <div class="photo-placeholder" style="width:110px;height:160px;"><div class="photo-head"></div></div>
+        <div class="hero-bottom-text" style="font-size:clamp(34px,7vw,60px);">&amp; Developer</div>
+        <div style="display:flex; gap:8px; padding: 0 24px 16px; align-items:center;">
+          <div class="hero-cta" style="background:#fafafa; color:#0a0a0a; border-color:#fafafa;">Domluvit spolupráci ↗</div>
+          <div class="hero-cta">Moje projekty</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — S CTA tlačítky</h3>
+      <p>Pozdrav + dva call-to-action buttony dole. Funkčnější, drží strukturu stávajícího webu.</p>
+    </div>
+  </div>
+
+</div>

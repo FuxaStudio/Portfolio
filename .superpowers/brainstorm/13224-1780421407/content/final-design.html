@@ -1,0 +1,138 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+  .final-hero {
+    background: #0a0a0a;
+    border-radius: 14px;
+    padding: 40px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-composition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 0;
+  }
+
+  .word-web {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 20vw, 180px);
+    color: #fafafa;
+    line-height: 1;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 2;
+    user-select: none;
+  }
+
+  .word-stack {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    line-height: 0.88;
+    position: relative;
+    z-index: 2;
+    margin-left: 16px;
+    user-select: none;
+  }
+
+  .word-designer {
+    font-size: clamp(42px, 8vw, 78px);
+    color: #fafafa;
+  }
+
+  .word-developer {
+    font-size: clamp(42px, 8vw, 78px);
+    color: transparent;
+    -webkit-text-stroke: 2px #fafafa;
+  }
+
+  /* Photo placeholder — bude nahrazena PNG bez pozadí */
+  .photo-cutout {
+    width: 130px;
+    height: 240px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 24px;
+    gap: 0;
+  }
+
+  .photo-cutout-inner {
+    width: 130px;
+    height: 240px;
+    background: linear-gradient(180deg, #b89870 0%, #a07850 40%, #2a2218 100%);
+    border-radius: 65px 65px 48px 48px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 22px;
+    overflow: hidden;
+  }
+
+  .photo-head {
+    width: 56px;
+    height: 56px;
+    background: #c8a88a;
+    border-radius: 50%;
+  }
+
+  .note {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: #525252;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+</style>
+
+<h2>Finální design hero sekce</h2>
+<p class="subtitle">Schval kompozici před implementací. Fotka (šedý placeholder) bude nahrazena tvojí PNG.</p>
+
+<div class="mockup">
+  <div class="mockup-header">index.html — hero sekce</div>
+  <div class="mockup-body" style="padding:0;">
+    <div class="final-hero">
+      <div class="hero-composition">
+        <div class="word-web">Web</div>
+        <div class="photo-cutout">
+          <div class="photo-cutout-inner"><div class="photo-head"></div></div>
+        </div>
+        <div class="word-stack">
+          <span class="word-designer">Designer</span>
+          <span class="word-developer">Developer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note">← Obnov stránku pokud se font nenačetl správně</div>
+
+<div style="margin-top: 24px; padding: 16px; background: #191919; border-radius: 8px; border: 1px solid #383838;">
+  <p style="margin: 0 0 8px; color: #fafafa; font-size: 0.9rem; font-weight: 600;">Co bude v implementaci:</p>
+  <ul style="margin: 0; padding-left: 1.2em; color: #a1a1a1; font-size: 0.85rem; line-height: 1.8;">
+    <li>Font Bebas Neue přidán do &lt;head&gt;</li>
+    <li>"Web" — velký bílý text vlevo (z-index: 2)</li>
+    <li>Tvá PNG s průhledným pozadím — středem (z-index: 4)</li>
+    <li>"Designer" — bílý text vpravo nahoře (z-index: 2)</li>
+    <li>"Developer" — outline text vpravo dole (z-index: 2)</li>
+    <li>Stávající hero obsah (nadpis, popis, buttony) zůstane pod kompozicí</li>
+  </ul>
+</div>

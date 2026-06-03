@@ -1,0 +1,117 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+  .final-hero {
+    background: #0a0a0a;
+    border-radius: 14px;
+    padding: 50px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-composition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .word-web, .word-web-over {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 19vw, 170px);
+    line-height: 1;
+    letter-spacing: 3px;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .word-stack, .word-stack-over {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    line-height: 0.88;
+    user-select: none;
+    white-space: nowrap;
+    margin-left: 18px;
+  }
+
+  /* VRSTVA 1: bílý text za fotkou */
+  .text-behind { position: relative; z-index: 2; display: flex; align-items: center; }
+  .word-web       { color: #fafafa; }
+  .word-designer  { font-size: clamp(42px, 8vw, 76px); color: #fafafa; }
+  .word-developer { font-size: clamp(42px, 8vw, 76px); color: #fafafa; }
+
+  /* VRSTVA 2: fotka */
+  .photo-cutout {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 140px; height: 260px;
+    border-radius: 70px 70px 52px 52px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #b89870 0%, #a07850 35%, #3a2e20 70%, #1a1a1a 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 24px;
+  }
+  .photo-head { width: 58px; height: 58px; background: #c8a88a; border-radius: 50%; }
+
+  /* VRSTVA 3: černý+outline text přes fotku */
+  .text-over {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    clip-path: ellipse(70px 130px at 50% 50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  .word-web-over      { color: #111; -webkit-text-stroke: 1.5px #fafafa; }
+  .word-designer-over { font-size: clamp(42px, 8vw, 76px); color: #111; -webkit-text-stroke: 1.5px #fafafa; }
+  .word-developer-over{ font-size: clamp(42px, 8vw, 76px); color: #111; -webkit-text-stroke: 1.5px #fafafa; }
+</style>
+
+<h2>Všechny texty bílé — přes fotku černé s outlinem</h2>
+<p class="subtitle">Web, Designer i Developer jsou plně bílé. Kde fotka překrývá text → černý s bílým outlinem.</p>
+
+<div class="mockup">
+  <div class="mockup-header">Finální hero</div>
+  <div class="mockup-body" style="padding:0;">
+    <div class="final-hero">
+      <div class="hero-composition">
+
+        <!-- Vrstva 1: bílý text -->
+        <div class="text-behind">
+          <div class="word-web">Web</div>
+          <div class="word-stack">
+            <span class="word-designer">Designer</span>
+            <span class="word-developer">Developer</span>
+          </div>
+        </div>
+
+        <!-- Vrstva 2: fotka -->
+        <div class="photo-cutout">
+          <div class="photo-head"></div>
+        </div>
+
+        <!-- Vrstva 3: přepisující text přes fotku -->
+        <div class="text-over">
+          <div class="word-web-over">Web</div>
+          <div class="word-stack-over">
+            <span class="word-designer-over">Designer</span>
+            <span class="word-developer-over">Developer</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

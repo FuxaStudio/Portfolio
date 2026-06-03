@@ -1,0 +1,30 @@
+<h2>Jaké pozadí pro hero sekci?</h2>
+<p class="subtitle">Referenční design má bílé pozadí. Tvůj aktuální web je tmavý. Jak to chceš?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="white" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff; padding: 24px; min-height:200px; display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden; position:relative;">
+      <div style="font-size: 52px; font-weight: 900; color: #111; letter-spacing:-2px; line-height:1; font-family:'Arial Black',sans-serif; z-index:2; position:relative;">Designer</div>
+      <div style="width:80px; height:100px; background: linear-gradient(180deg, #d4b896 0%, #c4a882 100%); border-radius: 40px 40px 30px 30px; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;"></div>
+      <div style="font-size: 44px; font-weight: 900; color: transparent; -webkit-text-stroke: 2px #111; letter-spacing:-2px; line-height:1; font-family:'Arial Black',sans-serif; z-index:2; position:relative;">Developer</div>
+    </div>
+    <div class="card-body">
+      <h3>Bílé pozadí</h3>
+      <p>Jako v referenci — čistý, vzdušný kontrast. Výrazná změna oproti zbytku webu.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="dark" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a0a; padding: 24px; min-height:200px; display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden; position:relative;">
+      <div style="font-size: 52px; font-weight: 900; color: #fff; letter-spacing:-2px; line-height:1; font-family:'Arial Black',sans-serif; z-index:2; position:relative;">Designer</div>
+      <div style="width:80px; height:100px; background: linear-gradient(180deg, #d4b896 0%, #c4a882 100%); border-radius: 40px 40px 30px 30px; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;"></div>
+      <div style="font-size: 44px; font-weight: 900; color: transparent; -webkit-text-stroke: 2px #fff; letter-spacing:-2px; line-height:1; font-family:'Arial Black',sans-serif; z-index:2; position:relative;">Developer</div>
+    </div>
+    <div class="card-body">
+      <h3>Tmavé pozadí</h3>
+      <p>Odpovídá zbytku tvého webu — konzistentní tmavý styl s bílou a outline typografií.</p>
+    </div>
+  </div>
+
+</div>

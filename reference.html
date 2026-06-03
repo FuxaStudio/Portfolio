@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html lang="cs" data-page="references">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference klientů — Hodnocení spolupráce | Fuxa Studio</title>
+  <meta name="description"
+    content="Co říkají klienti o spolupráci s Fuxa Studio? Přečtěte si reference a hodnocení od spokojených zákazníků, kteří svěřili svůj web do mých rukou." />
+  <meta name="author" content="Pavel Fuxa" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://fuxastudio.cz/reference.html" />
+  <link rel="alternate" hreflang="cs" href="https://fuxastudio.cz/reference.html" />
+  <link rel="alternate" hreflang="x-default" href="https://fuxastudio.cz/reference.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fuxastudio.cz/reference.html" />
+  <meta property="og:title" content="Reference klientů — Hodnocení spolupráce | Fuxa Studio" />
+  <meta property="og:description" content="Co říkají klienti o spolupráci s Fuxa Studio? Přečtěte si reference a hodnocení od spokojených zákazníků, kteří svěřili svůj web do mých rukou." />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:site_name" content="Fuxa Studio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reference klientů — Hodnocení spolupráce | Fuxa Studio" />
+  <meta name="twitter:description" content="Reference a hodnocení klientů o spolupráci s Fuxa Studio — Pavel Fuxa." />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    /* ========== REFERENCES SECTION ========== */
+    .references-section {
+      padding: var(--space-section) 0;
+    }
+
+    .references-header {
+      text-align: center;
+      margin-bottom: var(--space-4xl);
+    }
+
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+    }
+
+    .reference-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: clamp(1rem, 5vw, var(--space-2xl));
+      min-width: 0;
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .reference-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .reference-quote-icon {
+      color: var(--color-accent-1);
+      margin-bottom: var(--space-lg);
+      opacity: 0.65;
+    }
+
+    .reference-text {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: var(--space-xl);
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .reference-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin-bottom: var(--space-xl);
+    }
+
+    .reference-footer {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .reference-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      object-fit: contain;
+      background: var(--color-bg-secondary);
+      flex-shrink: 0;
+    }
+
+    .reference-logo-placeholder {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+
+    .reference-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .reference-name {
+      font-family: var(--font-display);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reference-company {
+      font-size: var(--fs-xs);
+      color: var(--color-text-muted);
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reference-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      font-family: var(--font-primary);
+      text-decoration: none;
+      transition: all var(--duration-fast) var(--ease-out);
+      cursor: pointer;
+      align-self: flex-start;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .reference-btn:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--color-text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ========== CTA ========== */
+    .references-cta {
+      padding: var(--space-section) 0;
+      background: var(--color-bg-secondary);
+      position: relative;
+      text-align: center;
+    }
+
+    .references-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    }
+
+    .references-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-aether-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .cta-fade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        var(--color-bg-primary) 0%,
+        rgba(10, 10, 15, 0.05) 50%,
+        var(--color-bg-primary) 100%
+      );
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .references-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .references-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://fuxastudio.cz/reference.html",
+    "name": "Reference klientů — Fuxa Studio",
+    "description": "Reference a hodnocení klientů spolupráce s Pavel Fuxou — Fuxa Studio",
+    "url": "https://fuxastudio.cz/reference.html",
+    "about": { "@id": "https://fuxastudio.cz/#person" },
+    "inLanguage": "cs-CZ"
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Cursor glow effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Fuxa Studio Logo"></a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" data-i18n="nav.home">Domů</a>
+        <a href="o-mne.html" data-i18n="nav.about">O mně</a>
+        <a href="projekty.html" data-i18n="nav.projects">Projekty</a>
+        <a href="reference.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.references">Reference</a>
+        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+        <a href="kontakt.html#form" class="nav-cta" data-i18n="nav.cta">Domluvit spolupráci</a>
+      </div>
+
+      <!-- Language switcher -->
+      <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Language / Jazyk">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">CS</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero" style="min-height: 50vh; padding-top: 8rem; padding-bottom: 4rem;">
+    <canvas class="hero-stars-canvas" id="waveHeroCanvas"></canvas>
+
+    <div class="container hero-content" style="padding-top: 2rem;">
+      <h1 class="hero-title">
+        <span class="line">
+          <span data-i18n="referencespage.hero.line1">Co říkají</span>
+          <span class="gradient-text" data-i18n="referencespage.hero.line2">klienti</span>
+        </span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ========== REFERENCES ========== -->
+  <section class="references-section" id="references">
+    <div class="container">
+      <div class="references-grid" style="grid-template-columns: 1fr; max-width: 560px; margin: 0 auto;">
+
+        <!-- Reference 1 — Mattina Café -->
+        <div class="reference-card reveal">
+          <div class="reference-quote-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+          </div>
+          <p class="reference-text" data-i18n="reference.mattina.text">
+            So spoluprácou som veľmi spokojná, všetko bolo urobené podľa našich predstáv, dokonca aj texty prvých blogov. Ďakujeme.
+          </p>
+          <div class="reference-divider"></div>
+          <div class="reference-footer">
+            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" />
+            <div class="reference-info">
+              <div class="reference-name">Ivana Lencesova</div>
+              <div class="reference-company">Mattina Café</div>
+            </div>
+          </div>
+          <a href="https://mattina.sk/" class="reference-btn" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="reference.cta">Navštívit stránku</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="references-cta" id="cta">
+    <canvas id="ctaAetherFlow" class="cta-aether-canvas"></canvas>
+    <div class="cta-fade"></div>
+    <div class="container">
+      <div class="references-cta-content">
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="cta.label">Připraveni?</span>
+        <h2 class="section-title" data-i18n-html="cta.title.html">Máte nápad <span class="gradient-text">na web?</span></h2>
+        <p class="section-subtitle" style="margin: 0 auto var(--space-3xl);" data-i18n="cta.subtitle">Napište mi, ozvu se do 24 hodin.</p>
+        <a href="kontakt.html#form" class="btn-primary" id="refCtaBtn">
+          <span data-i18n="cta.btn">Domluvit spolupráci</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer" style="padding-top: var(--space-4xl);">
+    <div class="footer-glow"></div>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Left: Brand & Contact -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Fuxa<span class="footer-logo-accent">Studio</span></a>
+          <p class="footer-name">Pavel Fuxa</p>
+          <div class="footer-contact-list">
+            <a href="tel:+420736131410" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +420 736 131 410
+            </a>
+            <a href="mailto:fuxa@fuxastudio.cz" class="footer-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              fuxa@fuxastudio.cz
+            </a>
+          </div>
+          <p class="footer-ico">IČO: 29618843</p>
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="footer-nav">
+          <h4 class="footer-heading" data-i18n="footer.nav.heading">Navigace</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="footer-nav-link" data-i18n="nav.home">Domů</a></li>
+            <li><a href="o-mne.html" class="footer-nav-link" data-i18n="nav.about">O mně</a></li>
+            <li><a href="projekty.html" class="footer-nav-link" data-i18n="nav.projects">Projekty</a></li>
+            <li><a href="reference.html" class="footer-nav-link" data-i18n="nav.references">Reference</a></li>
+            <li><a href="kontakt.html" class="footer-nav-link" data-i18n="nav.contact">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Social -->
+        <div class="footer-social-col">
+          <h4 class="footer-heading" data-i18n="footer.social.heading">Sociální sítě</h4>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61572145793086" class="footer-social-link"
+              aria-label="Facebook" id="footerFacebook" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/fuxastudio/" class="footer-social-link" aria-label="Instagram"
+              id="footerInstagram" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/pavel-fuxa-1a1569401/" class="footer-social-link" aria-label="LinkedIn"
+              id="footerLinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 FuxaStudio. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/wave-hero.js"></script>
+  <script src="js/main.js"></script>
+  <script>initWaveHero('waveHeroCanvas', 'hero');</script>
+  <script>
+  (function initCtaSmoke() {
+    var canvas = document.getElementById('ctaAetherFlow');
+    if (!canvas) return;
+    var gl = canvas.getContext('webgl2');
+    if (!gl) { canvas.style.display = 'none'; return; }
+    var VS = '#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}';
+    var FS = '#version 300 es\nprecision highp float;\nout vec4 O;\nuniform float time;\nuniform vec2 resolution;\nuniform vec3 u_color;\n#define FC gl_FragCoord.xy\n#define R resolution\n#define T (time+660.)\nfloat rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}\nfloat noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}\nfloat fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}\nvoid main(){vec2 uv=(FC-.5*R)/R.y;vec3 col=vec3(1);uv.x+=.25;uv*=vec2(2,1);float n=fbm(uv*.28-vec2(T*.01,0));n=noise(uv*3.+n*2.);col.r-=fbm(uv+vec2(0,T*.015)+n);col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));col=mix(vec3(.08),col,min(time*.1,1.));col=clamp(col,.08,1.);O=vec4(col,1);}';
+    function mkShader(type,src){var sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){gl.deleteShader(sh);return null;}return sh;}
+    var vs=mkShader(gl.VERTEX_SHADER,VS),fs=mkShader(gl.FRAGMENT_SHADER,FS);
+    if(!vs||!fs)return;
+    var prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);
+    if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;
+    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,1,-1,-1,1,1,1,-1]),gl.STATIC_DRAW);
+    var posLoc=gl.getAttribLocation(prog,'position');gl.enableVertexAttribArray(posLoc);gl.vertexAttribPointer(posLoc,2,gl.FLOAT,false,0,0);
+    var uRes=gl.getUniformLocation(prog,'resolution'),uTime=gl.getUniformLocation(prog,'time'),uColor=gl.getUniformLocation(prog,'u_color');
+    var t0=performance.now();
+    function resize(){var s=document.getElementById('cta'),dpr=Math.max(1,window.devicePixelRatio||1),w=s.offsetWidth,h=s.offsetHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';gl.viewport(0,0,canvas.width,canvas.height);}
+    window.addEventListener('resize',resize,{passive:true});resize();
+    function render(){var now=(performance.now()-t0)*.001;gl.useProgram(prog);gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.uniform2f(uRes,canvas.width,canvas.height);gl.uniform1f(uTime,now);gl.uniform3fv(uColor,[0,0,0]);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(render);}
+    requestAnimationFrame(render);
+  })();
+  </script>
+</body>
+
+</html>

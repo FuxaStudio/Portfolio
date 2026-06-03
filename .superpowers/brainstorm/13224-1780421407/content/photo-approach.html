@@ -1,0 +1,36 @@
+<h2>Jak bude řešena fotka?</h2>
+<p class="subtitle">Efekt vrstvení textu a fotky vyžaduje, aby fotka "prošla" přes typografii. Jsou 3 přístupy:</p>
+
+<div class="options">
+
+  <div class="option" data-choice="png" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>PNG s průhledným pozadím (nejlepší výsledek)</h3>
+      <p>Máš nebo si necháš udělat výřez — postava bez pozadí. Čistý profesionální efekt přesně jako v referenci. Pozadí vyříznu já přes AI nástroj pokud mi fotku pošleš.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="blend" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>CSS mix-blend-mode (bez nutnosti PNG)</h3>
+      <p>Použijeme existující fotku (about.webp nebo hero-bg.webp) s blend módem. Na tmavém pozadí funguje méně čistě, ale vyhneš se úpravám fotky.</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="abstract" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Bez fotky — čistě typografický efekt</h3>
+      <p>"Designer" tučně nahoře, "Developer" outline dole — bez osobní fotky. Minimalistický a velmi čistý styl.</p>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 2rem; padding: 1rem; border: 1px solid #383838; border-radius: 8px; background: #191919;">
+  <p style="margin:0; font-size: 0.85rem; color: #a1a1a1;">
+    <strong style="color:#fafafa;">Poznámka k efektu:</strong> Trumfem tohoto designu je, že fotka "proráží" text — horní text (Designer) je nad pozadím ale pod fotkou, nebo fotka prostě sedí mezi dvěma texty. PNG s průhledným pozadím dává nejpřesnější výsledek.
+  </p>
+</div>

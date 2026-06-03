@@ -1,42 +1,461 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="cs" data-page="index">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pavel Fuxa - Web Developer</title>
+  <title>Tvorba webových stránek na míru — Pavel Fuxa | Fuxa Studio</title>
   <meta name="description"
-    content="Full-stack web developer vytvářející moderní, rychlé a funkční webové stránky. Prohlédněte si mé portfolio a objevte projekty, které dávají smysl.." />
+    content="Freelance web developer tvořící moderní, rychlé a funkční webové stránky na míru. Prohlédněte si mé portfolio a projekty, které skutečně dávají smysl." />
+  <meta name="author" content="Pavel Fuxa" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://fuxastudio.cz/" />
+  <link rel="alternate" hreflang="cs" href="https://fuxastudio.cz/" />
+  <link rel="alternate" hreflang="x-default" href="https://fuxastudio.cz/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fuxastudio.cz/" />
+  <meta property="og:title" content="Tvorba webových stránek na míru — Pavel Fuxa | Fuxa Studio" />
+  <meta property="og:description" content="Freelance web developer tvořící moderní, rychlé a funkční webové stránky na míru. Prohlédněte si mé portfolio a projekty, které skutečně dávají smysl." />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:site_name" content="Fuxa Studio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tvorba webových stránek na míru — Pavel Fuxa | Fuxa Studio" />
+  <meta name="twitter:description" content="Freelance web developer tvořící moderní, rychlé a funkční webové stránky na míru." />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/png" href="assets/FS%20logo.png" />
+  <!-- Preload kritických zdrojů -->
+  <link rel="preload" href="assets/hero-sekce.png" as="image" type="image/png" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://fuxastudio.cz/#website",
+        "url": "https://fuxastudio.cz/",
+        "name": "Fuxa Studio",
+        "description": "Portfolio webového developera Pavla Fuxy",
+        "inLanguage": "cs-CZ"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://fuxastudio.cz/#person",
+        "name": "Pavel Fuxa",
+        "url": "https://fuxastudio.cz/",
+        "jobTitle": "Web Developer",
+        "description": "Freelance web developer kombinující programování s grafickým designem. Tvorba moderních, rychlých a funkčních webových stránek na míru.",
+        "email": "fuxa@fuxastudio.cz",
+        "telephone": "+420736131410",
+        "sameAs": [
+          "https://www.linkedin.com/in/pavel-fuxa-1a1569401/",
+          "https://www.instagram.com/fuxastudio/",
+          "https://www.facebook.com/profile.php?id=61572145793086"
+        ],
+        "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Figma", "Web Design"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://fuxastudio.cz/#service",
+        "name": "Fuxa Studio",
+        "url": "https://fuxastudio.cz/",
+        "description": "Tvorba webových stránek na míru — od návrhu po spuštění.",
+        "founder": { "@id": "https://fuxastudio.cz/#person" },
+        "areaServed": "CZ",
+        "serviceType": "Tvorba webových stránek",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "fuxa@fuxastudio.cz",
+          "telephone": "+420736131410",
+          "contactType": "customer service"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ========== INDEX HERO — TYPOGRAFICKÁ KOMPOZICE ========== */
+    .hero {
+      min-height: 100vh;
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .hero > .container {
+      max-width: 100%;
+      padding: 0 3vw;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero-typo-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 12vh;
+    }
+
+    /* Wrapper pro obě textové vrstvy — společný positioning kontext */
+    .hero-text-group {
+      position: relative;
+    }
+
+    /* Sdílené vlastnosti textových vrstev */
+    .hero-text-behind,
+    .hero-text-over {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.05em;
+      user-select: none;
+      line-height: 0.85;
+      white-space: nowrap;
+    }
+
+    /* Vrstva 1: solid bílý text */
+    .hero-text-behind {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Vrstva 3: outline text — inset:0 relativní k hero-text-group */
+    .hero-text-over {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .hero-word-web {
+      font-size: clamp(160px, 28vw, 520px);
+      line-height: 1;
+      color: #fafafa;
+    }
+
+    .hero-text-over .hero-word-web {
+      color: transparent;
+      -webkit-text-stroke: 4px #fafafa;
+      paint-order: stroke fill;
+    }
+
+    .hero-word-stack {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.1em;
+      line-height: 1;
+    }
+
+    .hero-word-designer,
+    .hero-word-developer {
+      font-size: clamp(70px, 12vw, 222px);
+      line-height: 0.82;
+      color: #fafafa;
+    }
+
+    .hero-text-over .hero-word-designer,
+    .hero-text-over .hero-word-developer {
+      color: transparent;
+      -webkit-text-stroke: 4px #fafafa;
+      paint-order: stroke fill;
+    }
+
+    /* Vrstva 2: fotka za textem */
+    .hero-photo {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 88vh;
+      width: auto;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Přístupnostní skrytý h1 */
+    .hero-typo-wrap .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Mobil */
+    @media (max-width: 540px) {
+      .hero-word-web {
+        font-size: clamp(80px, 22vw, 140px);
+      }
+
+      .hero-word-designer,
+      .hero-word-developer {
+        font-size: clamp(36px, 11vw, 72px);
+      }
+
+      .hero-photo {
+        height: 70vh;
+      }
+
+      .hero-text-over {
+        -webkit-mask-size: auto 70vh;
+        mask-size: auto 70vh;
+      }
+    }
+
+    /* ========== SMOKE CANVAS ========== */
+    .aether-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-fade {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 10, 15, 0.0) 0%,
+        rgba(10, 10, 15, 0.05) 50%,
+        var(--color-bg-primary) 100%
+      );
+    }
+
+    /* ========== REFERENCES PREVIEW ========== */
+    .references-preview {
+      padding: var(--space-section) 0;
+    }
+
+    .references-preview-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: var(--space-4xl);
+      flex-wrap: wrap;
+      gap: var(--space-lg);
+    }
+
+    .references-grid-home {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .reference-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: clamp(1rem, 5vw, var(--space-2xl));
+      min-width: 0;
+      transition: all var(--duration-normal) var(--ease-out);
+    }
+
+    .reference-card:hover {
+      border-color: var(--color-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .reference-quote-icon {
+      color: var(--color-accent-1);
+      margin-bottom: var(--space-lg);
+      opacity: 0.65;
+    }
+
+    .reference-text {
+      font-size: var(--fs-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      flex: 1;
+      margin-bottom: var(--space-xl);
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .reference-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin-bottom: var(--space-xl);
+    }
+
+    .reference-footer {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .reference-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      object-fit: contain;
+      background: var(--color-bg-secondary);
+      flex-shrink: 0;
+    }
+
+    .reference-logo-placeholder {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+
+    .reference-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .reference-name {
+      font-family: var(--font-display);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-bold);
+      color: var(--color-text-primary);
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reference-company {
+      font-size: var(--fs-xs);
+      color: var(--color-text-muted);
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .reference-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding: 0.55rem 1.1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      font-family: var(--font-primary);
+      text-decoration: none;
+      transition: all var(--duration-fast) var(--ease-out);
+      cursor: pointer;
+      align-self: flex-start;
+      max-width: 100%;
+      box-sizing: border-box;
+      margin-top: var(--space-xl);
+    }
+
+    .reference-btn:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: var(--color-text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (max-width: 640px) {
+      .references-preview-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ===== Mobile S (≤ 390px) — prevent horizontal overflow in contact cards ===== */
+    @media (max-width: 390px) {
+      .contact-link {
+        padding: var(--space-md);
+        gap: var(--space-md);
+      }
+
+      .contact-link-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+
+      /* Klíčové: flex-child musí mít min-width: 0 aby mohl splasknout */
+      .contact-link-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .contact-link-text .value {
+        font-size: var(--fs-base);
+        overflow-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Cursor glow effect -->
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <!-- ========== NAVIGATION ========== -->
+<!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#" class="nav-logo"><img src="assets/FS%20logo.png" alt="Fuxa Studio Logo"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Fuxa Studio Logo"></a>
 
       <div class="nav-links" id="navLinks">
-        <a href="index.html" class="static-active" style="color: var(--color-text-primary);">Domů</a>
-        <a href="about.html">O mně</a>
-        <a href="projects.html">Projekty</a>
-        <a href="contact.html">Kontakt</a>
-        <a href="contact.html#form" class="nav-cta">Domluvit spolupráci</a>
+        <a href="index.html" class="static-active" style="color: var(--color-text-primary);"
+          data-i18n="nav.home">Domů</a>
+        <a href="o-mne.html" data-i18n="nav.about">O mně</a>
+        <a href="projekty.html" data-i18n="nav.projects">Projekty</a>
+        <a href="reference.html" data-i18n="nav.references">Reference</a>
+        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+        <a href="kontakt.html#form" class="nav-cta" data-i18n="nav.cta">Domluvit spolupráci</a>
+      </div>
+
+      <!-- Language switcher -->
+      <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Language / Jazyk">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">CS</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -49,40 +468,43 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="assets/hero-bg.png" alt="" aria-hidden="true" />
-    </div>
-    <canvas class="hero-stars-canvas" id="heroStars"></canvas>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
+    <canvas id="aetherFlow" class="aether-canvas"></canvas>
+    <div class="hero-fade"></div>
 
-    <div class="container hero-content">
+    <div class="container">
+      <div class="hero-typo-wrap">
 
-      <h1 class="hero-title">
-        <span class="line">Vytvářím</span>
-        <span class="line"><span class="gradient-text">moderní weby</span></span>
-        <span class="line">které fungují</span>
-      </h1>
+        <!-- Textové vrstvy v společném wrapperu pro přesné překrytí -->
+        <div class="hero-text-group">
 
-      <p class="hero-description">
-        Pomáhám vytvářet webové stránky, které jsou rychlé, spolehlivé a dobře použitelné.
-      </p>
+          <!-- Vrstva 1: solid bílý text -->
+          <div class="hero-text-behind">
+            <span class="hero-word-web">Web</span>
+            <div class="hero-word-stack">
+              <span class="hero-word-designer">Designer</span>
+              <span class="hero-word-developer">Developer</span>
+            </div>
+          </div>
 
-      <div class="hero-actions">
-        <a href="projects.html" class="btn-primary" id="heroCtaPrimary">
-          Moje projekty
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 17l9.2-9.2M17 17V7H7" />
-          </svg>
-        </a>
-        <a href="contact.html#form" class="btn-secondary" id="heroCtaSecondary">
-          Napište mi
-        </a>
+          <!-- Vrstva 3: outline text (překrývá text-behind přesně) -->
+          <div class="hero-text-over" aria-hidden="true">
+            <span class="hero-word-web">Web</span>
+            <div class="hero-word-stack">
+              <span class="hero-word-designer">Designer</span>
+              <span class="hero-word-developer">Developer</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Vrstva 2: fotka kotvená ke spodku -->
+        <img src="assets/hero-sekce.png" alt="" class="hero-photo" aria-hidden="true">
+
+        <!-- SEO nadpis (vizuálně skrytý) -->
+        <h1 class="sr-only">Web Designer &amp; Developer — Pavel Fuxa</h1>
+
       </div>
     </div>
-
   </section>
 
 
@@ -92,20 +514,22 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text reveal">
-          <span class="section-label">O mně</span>
-          <h2 class="section-title">Přetvářím nápady<br /><span class="gradient-text">v elegantní řešení</span></h2>
-          <p>
-            Jsem full-stack developer s citem pro estetiku, který se specializuje na tvorbu elegantních a přehledných
-            webových stránek. Zaměřuji se na přetváření nápadů do funkčních řešení.
+          <span class="section-label" data-i18n="about.label">O mně</span>
+          <h2 class="section-title" data-i18n-html="about.title.html">Přetvářím nápady<br /><span
+              class="gradient-text">v elegantní řešení</span></h2>
+          <p data-i18n="about.p1">
+            Jsem Pavel Fuxa, web developer na volné noze. Spojuji programování s grafickým cítěním, takže weby nejen naprogramuji, ale taky navrhnu tak, aby dávaly smysl a dobře vypadaly.
           </p>
-          <p>
-            Ve všem, co dělám, kladu důraz na výkon a použitelnost. Pevně věřím, že web by měl nejen perfektně fungovat,
-            ale také dobře vypadat.
+          <p data-i18n="about.p2">
+            K webům jsem se dostal přirozeně. Vystudoval jsem grafiku a postupně mě začalo lákat nejen weby navrhovat, ale rovnou je i stavět, a dělat to po svém, na sebe. Spojení designu a kódu mi dává smysl. Nejsem grafik, co předá návrh a dál ho neřeší, ani kodér, kterému je vzhled jedno.
+          </p>
+          <p data-i18n="about.p3">
+            Co ode mě můžete čekat? Přehlednou komunikaci a web postavený na míru místo přetažené šablony. Důraz kladu na to, aby byl výsledek rychlý, funkční a dobře použitelný. Po předání nezmizím. Web je pro mě začátek spolupráce, ne konec.
           </p>
 
           <div style="margin-top: 2rem;">
-            <a href="about.html" class="btn-secondary">
-              Více o mně
+            <a href="o-mne.html" class="btn-secondary">
+              <span data-i18n="about.more">Více o mně</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -116,9 +540,8 @@
 
         <div class="about-visual reveal reveal-delay-2">
           <div class="about-portrait">
-            <img src="assets/about.png" alt="Pavel Fuxa — Web Developer" />
+            <img src="assets/about.webp" alt="Pavel Fuxa — Web Developer" loading="lazy" />
           </div>
-          <div class="about-floating-badge">Otevřený spolupráci</div>
         </div>
       </div>
     </div>
@@ -129,14 +552,15 @@
     <div class="container">
       <div class="projects-header">
         <div>
-          <span class="section-label reveal">Moje práce</span>
-          <h2 class="section-title reveal">Vybrané <span class="gradient-text">projekty</span></h2>
-          <p class="section-subtitle reveal">
+          <span class="section-label reveal" data-i18n="projects.label">Moje práce</span>
+          <h2 class="section-title reveal" data-i18n-html="projects.title.html">Vybrané <span
+              class="gradient-text">projekty</span></h2>
+          <p class="section-subtitle reveal" data-i18n="projects.subtitle">
             Projekty zaměřené na výkon, design a výsledky.
           </p>
         </div>
-        <a href="projects.html" class="btn-secondary reveal" id="viewAllProjects">
-          Zobrazit všechny
+        <a href="projekty.html" class="btn-secondary reveal" id="viewAllProjects">
+          <span data-i18n="projects.viewAll">Zobrazit všechny</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -145,11 +569,11 @@
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1 — Svídnický extrém (reálná zakázka, hlavní projekt) -->
         <article class="project-card project-featured reveal" id="project1">
 
           <div class="project-image">
-            <img src="assets/project1.png" alt="Aurora - Restaurace" />
+            <img src="assets/svidnicky-extrem.webp" alt="Náhled webu Svídnický extrém — web pro sportovní akci" loading="lazy" />
             <div class="project-image-overlay">
               <div class="project-link-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -158,21 +582,20 @@
                 </svg>
               </div>
             </div>
-            <a href="https://restauraceaurora.framer.website/" aria-label="Přejít na Aurora" target="_blank"
+            <a href="https://svidnickyextrem.cz/" aria-label="Přejít na Svídnický extrém" target="_blank"
               rel="noopener noreferrer" style="position: absolute; inset: 0; z-index: 10;"></a>
           </div>
           <div class="project-info">
             <div class="project-tags">
-              <span class="project-tag">Restaurace</span>
+              <span class="project-tag" data-i18n="project.tag.sport">Sport</span>
             </div>
-            <h3 class="project-title">Aurora</h3>
-            <p class="project-description">
-              Moderní luxusní restaurace zaměřená na výjimečný gastronomický zážitek, prvotřídní suroviny a elegantní
-              prostředí.
+            <h3 class="project-title">Svídnický extrém</h3>
+            <p class="project-description" data-i18n="project.svidnicky.desc">
+              Web pro Svídnický extrém. Moderní, přehledné zpracování zaměřené na snadnou orientaci návštěvníků a výraznou prezentaci akce.
             </p>
-            <a href="https://restauraceaurora.framer.website/" class="project-cta" target="_blank"
+            <a href="https://svidnickyextrem.cz/" class="project-cta" target="_blank"
               rel="noopener noreferrer">
-              Přejít na stránku
+              <span data-i18n="project.cta">Přejít na stránku</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -181,11 +604,11 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
+        <!-- Project 2 — Mlýn Janderov (reálná zakázka) -->
         <article class="project-card reveal reveal-delay-1" id="project2">
           <div class="project-number">02</div>
           <div class="project-image">
-            <img src="assets/Project2.png" alt="Cukrárna Skuteč" />
+            <img src="assets/Janderov.webp" alt="Náhled webu Mlýn Janderov — web pro rodinné mlynářství" loading="lazy" />
             <div class="project-image-overlay">
               <div class="project-link-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -194,19 +617,19 @@
                 </svg>
               </div>
             </div>
-            <a href="https://cukrarna.framer.website/" aria-label="Přejít na Cukrárna Skuteč" target="_blank"
+            <a href="https://www.mlyn-janderov.cz/" aria-label="Přejít na Mlýn Janderov" target="_blank"
               rel="noopener noreferrer" style="position: absolute; inset: 0; z-index: 10;"></a>
           </div>
           <div class="project-info">
             <div class="project-tags">
-              <span class="project-tag">Cukrárna</span>
+              <span class="project-tag" data-i18n="project.tag.mlyn">Lokální podnik</span>
             </div>
-            <h3 class="project-title">Cukrárna Skuteč</h3>
-            <p class="project-description">
-              Cukrárna nabízející kvalitní dezerty, dorty na zakázku a příjemné prostředí pro sladké chvíle.
+            <h3 class="project-title">Mlýn Janderov</h3>
+            <p class="project-description" data-i18n="project.janderov.desc">
+              Web pro Mlýn Janderov, rodinné mlynářství s tradicí od roku 1540. Přehledné zpracování s důrazem na atmosféru místa, nabídku mouk a krmiv a snadnou orientaci zákazníka.
             </p>
-            <a href="https://cukrarna.framer.website/" class="project-cta" target="_blank" rel="noopener noreferrer">
-              Přejít na stránku
+            <a href="https://www.mlyn-janderov.cz/" class="project-cta" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="project.cta">Přejít na stránku</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -215,11 +638,11 @@
           </div>
         </article>
 
-        <!-- Project 3 -->
+        <!-- Project 3 — Mattina (reálná zakázka) -->
         <article class="project-card reveal reveal-delay-2" id="project3">
           <div class="project-number">03</div>
           <div class="project-image">
-            <img src="assets/project3.png" alt="Mexická restaurace" />
+            <img src="assets/mattina.webp" alt="Náhled webu Mattina — web pro kavárnu" loading="lazy" />
             <div class="project-image-overlay">
               <div class="project-link-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -228,20 +651,19 @@
                 </svg>
               </div>
             </div>
-            <a href="#" aria-label="Přejít na ConnectHub" target="_blank" rel="noopener noreferrer"
-              style="position: absolute; inset: 0; z-index: 10;"></a>
+            <a href="https://mattina.sk/" aria-label="Přejít na Mattina" target="_blank"
+              rel="noopener noreferrer" style="position: absolute; inset: 0; z-index: 10;"></a>
           </div>
           <div class="project-info">
             <div class="project-tags">
-              <span class="project-tag">Restaurace</span>
+              <span class="project-tag" data-i18n="project.tag.kavarna">Kavárna</span>
             </div>
-            <h3 class="project-title">The Modern Hacienda</h3>
-            <p class="project-description">
-              Mexická streetfood restaurace s výraznými chutěmi, čerstvými ingrediencemi a uvolněnou atmosférou pro
-              rychlé, ale nezapomenutelné sousto.
+            <h3 class="project-title">Mattina</h3>
+            <p class="project-description" data-i18n="project.mattina.desc">
+              Web pro kavárnu Mattina. Zpracovaný ve WordPressu s důrazem na přehlednou nabídku, atmosféru místa a jednoduchou správu obsahu pro klienta.
             </p>
-            <a href="#" class="project-cta" target="_blank" rel="noopener noreferrer">
-              Přejít na stránku
+            <a href="https://mattina.sk/" class="project-cta" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="project.cta">Přejít na stránku</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -249,6 +671,61 @@
             </a>
           </div>
         </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REFERENCES PREVIEW ========== -->
+  <section class="references-preview" id="references-preview">
+    <div class="container">
+      <div class="references-preview-header">
+        <div>
+          <span class="section-label reveal" data-i18n="references.label">Reference</span>
+          <h2 class="section-title reveal" data-i18n-html="references.title.html">Co říkají <span class="gradient-text">klienti</span></h2>
+          <p class="section-subtitle reveal" data-i18n="references.subtitle">
+            Přečtěte si, jak hodnotí spolupráci se mnou.
+          </p>
+        </div>
+        <a href="reference.html" class="btn-secondary reveal" id="viewAllReferences">
+          <span data-i18n="references.viewAll">Zobrazit všechny</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="references-grid-home">
+
+        <!-- Reference — Mattina Café -->
+        <div class="reference-card reveal">
+          <div class="reference-quote-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+          </div>
+          <p class="reference-text" data-i18n="reference.mattina.text">
+            So spoluprácou som veľmi spokojná, všetko bolo urobené podľa našich predstáv, dokonca aj texty prvých blogov. Ďakujeme.
+          </p>
+          <div class="reference-divider"></div>
+          <div class="reference-footer">
+            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" />
+            <div class="reference-info">
+              <div class="reference-name">Ivana Lencesova</div>
+              <div class="reference-company">Mattina Café</div>
+            </div>
+          </div>
+          <a href="https://mattina.sk/" class="reference-btn" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="reference.cta">Navštívit stránku</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -258,10 +735,11 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info reveal">
-          <span class="section-label">Napiště mi</span>
-          <h2 class="section-title">Pojďme společně vytvořit<br /><span class="gradient-text">něco skvělého</span></h2>
-          <p class="section-subtitle">
-            Máte projekt, který chcete posunout dál? Pojďme ho společně zrealizovat.
+          <span class="section-label" data-i18n="contact.label">Napište mi</span>
+          <h2 class="section-title" data-i18n-html="contact.title.html">Máte nápad<br /><span
+              class="gradient-text">na web?</span></h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">
+            Napište mi, ozvu se do 24 hodin.
           </p>
 
           <div class="contact-links" style="margin-top: 2rem;">
@@ -302,7 +780,7 @@
                 </svg>
               </div>
               <div class="contact-link-text">
-                <div class="label">Telefon</div>
+                <div class="label" data-i18n="contact.phone.label">Telefon</div>
                 <div class="value">+420 736 131 410</div>
               </div>
             </a>
@@ -311,35 +789,37 @@
         </div>
 
         <div class="contact-form-card reveal reveal-delay-2" id="formCard">
-          <h3>Napište mi</h3>
-          <p class="form-subtitle">Popište svůj projekt a ozvu se vám do 24 hodin.</p>
+          <h3 data-i18n="form.heading">Napište mi</h3>
+          <p class="form-subtitle" data-i18n="form.subtitle">Popište svůj projekt a ozvu se vám do 24 hodin.</p>
           <form class="contact-form" id="contactForm">
             <input type="hidden" name="access_key" value="21ce9b27-37ef-4f30-bc47-26c8ce8cbc6a">
             <!-- Honeypot Spam Protection -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <div class="form-group">
-              <label for="formName" class="form-label">Jméno a příjmení</label>
-              <input type="text" name="name" id="formName" placeholder="Pavel Fuxa" required />
+              <label for="formName" class="form-label" data-i18n="form.name.label">Jméno a příjmení</label>
+              <input type="text" name="name" id="formName" placeholder="Pavel Fuxa" required
+                data-i18n-placeholder="form.name.placeholder" />
             </div>
             <div class="form-group">
-              <label for="formEmail" class="form-label">E-mail</label>
-              <input type="email" name="email" id="formEmail" placeholder="fuxa@fuxastudio.cz" required />
+              <label for="formEmail" class="form-label" data-i18n="form.email.label">E-mail</label>
+              <input type="email" name="email" id="formEmail" placeholder="fuxa@fuxastudio.cz" required
+                data-i18n-placeholder="form.email.placeholder" />
             </div>
             <div class="form-group">
-              <label for="formPhone" class="form-label">Telefonní číslo</label>
+              <label for="formPhone" class="form-label" data-i18n="form.phone.label">Telefonní číslo</label>
               <input type="tel" name="phone" id="formPhone" placeholder="+420 736 131 410" required
+                data-i18n-placeholder="form.phone.placeholder"
                 oninput="this.value = this.value.replace(/[^0-9\s\+\-\(\)]/g, '')" />
             </div>
             <div class="form-group">
-              <label for="formMessage" class="form-label">Váš projekt</label>
-              <textarea name="message" id="formMessage"
-                placeholder="Např. provozuji kavárnu a potřebuji web, který pomůže zvýšit návštěvnost a získat nové zákazníky"
-                required></textarea>
+              <label for="formMessage" class="form-label" data-i18n="form.message.label">Váš projekt</label>
+              <textarea name="message" id="formMessage" required data-i18n-placeholder="form.message.placeholder"
+                placeholder="Např. provozuji kavárnu a potřebuji web, který pomůže zvýšit návštěvnost a získat nové zákazníky"></textarea>
             </div>
             <div class="form-submit">
               <button type="submit" class="btn-primary" id="formSubmitBtn">
-                Odeslat zprávu
+                <span data-i18n="form.submit">Odeslat zprávu</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
@@ -362,10 +842,10 @@
 
         <!-- Left: Brand & Contact -->
         <div class="footer-brand">
-          <a href="#" class="footer-logo">Fuxa<span class="footer-logo-accent">Studio</span></a>
+          <a href="index.html" class="footer-logo">Fuxa<span class="footer-logo-accent">Studio</span></a>
           <p class="footer-name">Pavel Fuxa</p>
           <div class="footer-contact-list">
-            <a href="tel:+420 736 131 410" class="footer-contact-item">
+            <a href="tel:+420736131410" class="footer-contact-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -382,22 +862,24 @@
               fuxa@fuxastudio.cz
             </a>
           </div>
+          <p class="footer-ico">IČO: 29618843</p>
         </div>
 
         <!-- Center: Navigation -->
         <div class="footer-nav">
-          <h4 class="footer-heading">Navigace</h4>
+          <h4 class="footer-heading" data-i18n="footer.nav.heading">Navigace</h4>
           <ul class="footer-nav-list">
-            <li><a href="index.html" class="footer-nav-link">Domů</a></li>
-            <li><a href="about.html" class="footer-nav-link">O mně</a></li>
-            <li><a href="projects.html" class="footer-nav-link">Projekty</a></li>
-            <li><a href="contact.html" class="footer-nav-link">Kontakt</a></li>
+            <li><a href="index.html" class="footer-nav-link" data-i18n="nav.home">Domů</a></li>
+            <li><a href="o-mne.html" class="footer-nav-link" data-i18n="nav.about">O mně</a></li>
+            <li><a href="projekty.html" class="footer-nav-link" data-i18n="nav.projects">Projekty</a></li>
+            <li><a href="reference.html" class="footer-nav-link" data-i18n="nav.references">Reference</a></li>
+            <li><a href="kontakt.html" class="footer-nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </div>
 
         <!-- Right: Social -->
         <div class="footer-social-col">
-          <h4 class="footer-heading">Sociální sítě</h4>
+          <h4 class="footer-heading" data-i18n="footer.social.heading">Sociální sítě</h4>
           <div class="footer-socials">
             <a href="https://www.facebook.com/profile.php?id=61572145793086" class="footer-social-link"
               aria-label="Facebook" id="footerFacebook" target="_blank" rel="noopener noreferrer">
@@ -426,13 +908,118 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 Pavel Fuxa. All rights reserved.</p>
+        <p class="footer-copyright">© 2026 FuxaStudio. All rights reserved.</p>
       </div>
 
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Spooky Smoke WebGL2 Shader -->
+  <script>
+  (function initSmokeHero() {
+    var canvas = document.getElementById('aetherFlow');
+    if (!canvas) return;
+
+    var gl = canvas.getContext('webgl2');
+    if (!gl) { canvas.style.display = 'none'; return; }
+
+    var VS = '#version 300 es\nprecision highp float;\nin vec4 position;\nvoid main(){gl_Position=position;}';
+
+    var FS = '#version 300 es\n' +
+      'precision highp float;\n' +
+      'out vec4 O;\n' +
+      'uniform float time;\n' +
+      'uniform vec2 resolution;\n' +
+      'uniform vec3 u_color;\n' +
+      '#define FC gl_FragCoord.xy\n' +
+      '#define R resolution\n' +
+      '#define T (time+660.)\n' +
+      'float rnd(vec2 p){p=fract(p*vec2(12.9898,78.233));p+=dot(p,p+34.56);return fract(p.x*p.y);}\n' +
+      'float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);return mix(mix(rnd(i),rnd(i+vec2(1,0)),u.x),mix(rnd(i+vec2(0,1)),rnd(i+1.),u.x),u.y);}\n' +
+      'float fbm(vec2 p){float t=.0,a=1.;for(int i=0;i<5;i++){t+=a*noise(p);p*=mat2(1,-1.2,.2,1.2)*2.;a*=.5;}return t;}\n' +
+      'void main(){\n' +
+      '  vec2 uv=(FC-.5*R)/R.y;\n' +
+      '  vec3 col=vec3(1);\n' +
+      '  uv.x+=.25;\n' +
+      '  uv*=vec2(2,1);\n' +
+      '  float n=fbm(uv*.28-vec2(T*.01,0));\n' +
+      '  n=noise(uv*3.+n*2.);\n' +
+      '  col.r-=fbm(uv+vec2(0,T*.015)+n);\n' +
+      '  col.g-=fbm(uv*1.003+vec2(0,T*.015)+n+.003);\n' +
+      '  col.b-=fbm(uv*1.006+vec2(0,T*.015)+n+.006);\n' +
+      '  col=mix(col,u_color,dot(col,vec3(.21,.71,.07)));\n' +
+      '  col=mix(vec3(.08),col,min(time*.1,1.));\n' +
+      '  col=clamp(col,.08,1.);\n' +
+      '  O=vec4(col,1);\n' +
+      '}';
+
+    function mkShader(type, src) {
+      var sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+        console.error(gl.getShaderInfoLog(sh));
+        gl.deleteShader(sh); return null;
+      }
+      return sh;
+    }
+
+    var vs = mkShader(gl.VERTEX_SHADER, VS);
+    var fs = mkShader(gl.FRAGMENT_SHADER, FS);
+    if (!vs || !fs) return;
+
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.error(gl.getProgramInfoLog(prog)); return;
+    }
+
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,-1,-1,1,1,1,-1]), gl.STATIC_DRAW);
+    var posLoc = gl.getAttribLocation(prog, 'position');
+    gl.enableVertexAttribArray(posLoc);
+    gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+    var uRes   = gl.getUniformLocation(prog, 'resolution');
+    var uTime  = gl.getUniformLocation(prog, 'time');
+    var uColor = gl.getUniformLocation(prog, 'u_color');
+
+    /* Default: white */
+    var color = [0.0, 0.0, 0.0];
+    var t0 = performance.now();
+
+    function resize() {
+      var hero = document.getElementById('hero');
+      var dpr = Math.max(1, window.devicePixelRatio || 1);
+      var w = hero.offsetWidth, h = hero.offsetHeight;
+      canvas.width  = w * dpr; canvas.height = h * dpr;
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+
+    function render() {
+      var now = (performance.now() - t0) * 0.001;
+      gl.useProgram(prog);
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uTime, now);
+      gl.uniform3fv(uColor, color);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+  })();
+  </script>
+
 </body>
 
 </html>

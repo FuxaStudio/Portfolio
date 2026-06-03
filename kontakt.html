@@ -1,21 +1,46 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs" data-page="contact">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pavel Fuxa - Kontakt & Spolupráce</title>
+  <title>Kontakt — poptávka tvorby webových stránek | Fuxa Studio</title>
   <meta name="description"
-    content="Kontaktujte mě a pojďme společně vytvořit něco skvělého. Moderní webové stránky, design a digitální řešení na míru." />
+    content="Kontaktujte Pavla Fuxu a pojďme společně vytvořit váš nový web. Odpovím do 24 hodin. Moderní webové stránky, grafický design a digitální řešení na míru." />
+  <meta name="author" content="Pavel Fuxa" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://fuxastudio.cz/kontakt.html" />
+  <link rel="alternate" hreflang="cs" href="https://fuxastudio.cz/kontakt.html" />
+  <link rel="alternate" hreflang="x-default" href="https://fuxastudio.cz/kontakt.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fuxastudio.cz/kontakt.html" />
+  <meta property="og:title" content="Kontakt — poptávka tvorby webových stránek | Fuxa Studio" />
+  <meta property="og:description" content="Kontaktujte Pavla Fuxu a pojďme společně vytvořit váš nový web. Odpovím do 24 hodin. Moderní webové stránky, grafický design a digitální řešení na míru." />
+  <meta property="og:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1280" />
+  <meta property="og:image:height" content="720" />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:site_name" content="Fuxa Studio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt — poptávka tvorby webových stránek | Fuxa Studio" />
+  <meta name="twitter:description" content="Kontaktujte Pavla Fuxu — freelance web developera. Odpovím do 24 hodin." />
+  <meta name="twitter:image" content="https://fuxastudio.cz/assets/og-image.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <style>
     /* ========== CONTACT PAGE — HERO BACKGROUND ========== */
@@ -33,11 +58,7 @@
       position: absolute;
       inset: 0;
       z-index: -2;
-      background:
-        radial-gradient(ellipse 60% 50% at 20% 40%, rgba(139, 92, 246, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 50% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 70%),
-        var(--color-bg-primary);
+      background: var(--color-bg-primary);
     }
 
     /* Floating ambient glow orbs — static, slow pulsing */
@@ -49,7 +70,7 @@
       border-radius: 50%;
       top: -150px;
       right: -100px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
       animation: glowPulse 6s ease-in-out infinite alternate;
     }
 
@@ -69,8 +90,12 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .contact-hero-content .hero-title .line > span {
+      display: inline-block;
     }
 
     .contact-hero-content .hero-title {
@@ -145,13 +170,13 @@
       width: 52px;
       height: 52px;
       border-radius: var(--radius-lg);
-      background: rgba(139, 92, 246, 0.1);
-      border: 1px solid rgba(139, 92, 246, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--color-accent-1);
+      color: var(--color-text-secondary);
     }
 
     .contact-method-text .label {
@@ -171,12 +196,12 @@
     /* Right column — form card */
     .contact-form-card {
       background: var(--color-bg-card);
-      border: 1px solid rgba(139, 92, 246, 0.3);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       padding: var(--space-3xl);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(139, 92, 246, 0.12);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
       transform: scale(1.02);
     }
 
@@ -186,8 +211,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: var(--color-accent-gradient);
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .contact-form-card h3 {
@@ -204,14 +229,12 @@
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       .contact-page-grid {
         grid-template-columns: 1fr;
         gap: var(--space-3xl);
       }
-    }
 
-    @media (max-width: 768px) {
       .contact-hero {
         min-height: auto;
         padding-top: 7rem;
@@ -225,10 +248,56 @@
 
       .contact-form-card {
         padding: var(--space-xl);
+        transform: none;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .contact-hero-content .hero-title .line > span {
+        display: inline;
+      }
+    }
+
+    /* ===== Mobile S (≤ 390px) — prevent horizontal overflow ===== */
+    @media (max-width: 390px) {
+      .contact-method {
+        padding: var(--space-md);
+        gap: var(--space-md);
+      }
+
+      .contact-method-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+
+      /* Klíčové: flex-child musí mít min-width: 0 aby mohl splasknout */
+      .contact-method-text {
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .contact-method-text .value {
+        font-size: var(--fs-base);
+        overflow-wrap: break-word;
+        word-break: break-all;
       }
     }
   </style>
-  <link rel="icon" type="image/png" href="assets/FS%20logo.png" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": "https://fuxastudio.cz/kontakt.html",
+    "name": "Kontakt — Fuxa Studio",
+    "description": "Kontaktní stránka Fuxa Studio — Pavel Fuxa, freelance web developer",
+    "url": "https://fuxastudio.cz/kontakt.html",
+    "mainEntity": { "@id": "https://fuxastudio.cz/#person" }
+  }
+  </script>
 </head>
 
 <body>
@@ -241,13 +310,14 @@
   <!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo"><img src="assets/FS%20logo.png" alt="Fuxa Studio Logo"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Fuxa Studio Logo"></a>
 
       <div class="nav-links" id="navLinks">
         <a href="index.html" data-i18n="nav.home">Domů</a>
-        <a href="about.html" data-i18n="nav.about">O mně</a>
-        <a href="projects.html" data-i18n="nav.projects">Projekty</a>
-        <a href="contact.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.contact">Kontakt</a>
+        <a href="o-mne.html" data-i18n="nav.about">O mně</a>
+        <a href="projekty.html" data-i18n="nav.projects">Projekty</a>
+        <a href="reference.html" data-i18n="nav.references">Reference</a>
+        <a href="kontakt.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.contact">Kontakt</a>
         <a href="#form" class="nav-cta" data-i18n="nav.cta">Domluvit spolupráci</a>
       </div>
 
@@ -268,7 +338,7 @@
   <!-- ========== HERO ========== -->
   <section class="contact-hero" id="contact">
     <div class="contact-hero-bg">
-      <canvas id="contactNetworkCanvas"
+      <canvas id="waveHeroCanvas"
         style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0;"></canvas>
     </div>
 
@@ -277,7 +347,7 @@
 
       <h1 class="hero-title">
         <span class="line">
-          <span data-i18n="contactpage.hero.line1">Pojďme společně</span> <span class="gradient-text" data-i18n="contactpage.hero.line2">vytvořit něco skvělého</span>
+          <span data-i18n="contactpage.hero.line1">Máte nápad</span> <span class="gradient-text" data-i18n="contactpage.hero.line2">na web?</span>
         </span>
       </h1>
 
@@ -423,7 +493,7 @@
           <a href="index.html" class="footer-logo">Fuxa<span class="footer-logo-accent">Studio</span></a>
           <p class="footer-name">Pavel Fuxa</p>
           <div class="footer-contact-list">
-            <a href="tel:+420 736 131 410" class="footer-contact-item">
+            <a href="tel:+420736131410" class="footer-contact-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -440,6 +510,7 @@
               fuxa@fuxastudio.cz
             </a>
           </div>
+          <p class="footer-ico">IČO: 29618843</p>
         </div>
 
         <!-- Center: Navigation -->
@@ -447,9 +518,10 @@
           <h4 class="footer-heading" data-i18n="footer.nav.heading">Navigace</h4>
           <ul class="footer-nav-list">
             <li><a href="index.html" class="footer-nav-link" data-i18n="nav.home">Domů</a></li>
-            <li><a href="about.html" class="footer-nav-link" data-i18n="nav.about">O mně</a></li>
-            <li><a href="projects.html" class="footer-nav-link" data-i18n="nav.projects">Projekty</a></li>
-            <li><a href="contact.html" class="footer-nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="o-mne.html" class="footer-nav-link" data-i18n="nav.about">O mně</a></li>
+            <li><a href="projekty.html" class="footer-nav-link" data-i18n="nav.projects">Projekty</a></li>
+            <li><a href="reference.html" class="footer-nav-link" data-i18n="nav.references">Reference</a></li>
+            <li><a href="kontakt.html" class="footer-nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </div>
 
@@ -480,14 +552,16 @@
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p class="footer-copyright">© 2026 Pavel Fuxa. All rights reserved.</p>
+        <p class="footer-copyright">© 2026 FuxaStudio. All rights reserved.</p>
       </div>
 
     </div>
   </footer>
 
-  <script src="translations.js"></script>
-  <script src="index.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/wave-hero.js"></script>
+  <script src="js/main.js"></script>
+  <script>initWaveHero('waveHeroCanvas', 'contact');</script>
 
 </body>
 

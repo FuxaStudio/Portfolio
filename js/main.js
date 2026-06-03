@@ -5,29 +5,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Shared mouse tracking ----
-  const cursorGlow = document.getElementById('cursorGlow');
   let mouseX = -500, mouseY = -500;
-  let mousePageX = -500, mousePageY = -500;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    mousePageX = e.pageX;
-    mousePageY = e.pageY;
   });
-
-  function animateCursor() {
-    cursorGlow.style.left = mouseX + 'px';
-    cursorGlow.style.top = mouseY + 'px';
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
 
   // Hide on touch devices
   const isTouchDevice = 'ontouchstart' in window;
-  if (isTouchDevice) {
-    cursorGlow.style.display = 'none';
-  }
 
   // ---- Interactive Starfield ----
   (function initStarfield() {
@@ -340,9 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Navbar scroll effect + scroll progress ----
   const navbar = document.getElementById('navbar');
-  const scrollProgress = document.getElementById('scrollProgress');
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
     if (currentScroll > 50) {
@@ -350,13 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navbar.classList.remove('scrolled');
     }
-
-    // Update scroll progress bar
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (currentScroll / docHeight) * 100;
-    scrollProgress.style.width = progress + '%';
-
-    lastScroll = currentScroll;
   }, { passive: true });
 
   // ---- Mobile menu toggle ----
@@ -387,14 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // For skill cards, trigger the level bar animation
-        if (entry.target.classList.contains('skill-card')) {
-          const bar = entry.target.querySelector('.skill-level-bar');
-          if (bar) {
-            const level = bar.style.getPropertyValue('--level');
-            bar.style.width = level;
-          }
-        }
       }
     });
   }, {
@@ -403,40 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
-
-  // ---- Animated stat counter ----
-  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-target'), 10);
-        animateCounter(el, target);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNumbers.forEach(el => counterObserver.observe(el));
-
-  function animateCounter(el, target) {
-    const duration = 2000;
-    const start = performance.now();
-
-    function step(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.round(eased * target);
-      el.textContent = current + '+';
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    }
-    requestAnimationFrame(step);
-  }
 
   // ---- Smooth scroll for anchor links ----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -584,8 +518,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Add active style to clicked button
         btn.classList.add('active');
-        btn.style.borderColor = 'var(--color-accent-1)';
-        btn.style.background = 'rgba(139, 92, 246, 0.1)';
+        btn.style.borderColor = 'rgba(255,255,255,0.35)';
+        btn.style.background = 'rgba(255,255,255,0.07)';
         btn.style.color = 'var(--color-text-primary)';
 
         const filterValue = btn.getAttribute('data-filter');
@@ -692,7 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(139, 92, 246, 0.4)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
         ctx.fill();
       });
 
@@ -707,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             const opacity = 1 - (distance / 110);
-            ctx.strokeStyle = `rgba(139, 92, 246, ${opacity * 0.25})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.12})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }

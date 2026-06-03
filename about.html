@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-page="about">
 
 <head>
   <meta charset="UTF-8" />
@@ -445,11 +445,17 @@
       <a href="index.html" class="nav-logo"><img src="assets/FS%20logo.png" alt="Fuxa Studio Logo"></a>
 
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Domů</a>
-        <a href="about.html" class="static-active" style="color: var(--color-text-primary);">O mně</a>
-        <a href="projects.html">Projekty</a>
-        <a href="contact.html">Kontakt</a>
-        <a href="contact.html#form" class="nav-cta">Domluvit spolupráci</a>
+        <a href="index.html" data-i18n="nav.home">Domů</a>
+        <a href="about.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.about">O mně</a>
+        <a href="projects.html" data-i18n="nav.projects">Projekty</a>
+        <a href="contact.html" data-i18n="nav.contact">Kontakt</a>
+        <a href="contact.html#form" class="nav-cta" data-i18n="nav.cta">Domluvit spolupráci</a>
+      </div>
+
+      <!-- Language switcher -->
+      <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Language / Jazyk">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">CS</button>
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -468,12 +474,12 @@
 
     <div class="container about-hero-content">
       <h1 class="hero-title">
-        <span class="line">
+        <span class="line" data-i18n-html="aboutpage.hero.title.html">
           Pomáhám firmám <span class="gradient-text">růst online</span>
         </span>
       </h1>
 
-      <p class="hero-description">
+      <p class="hero-description" data-i18n="aboutpage.hero.desc">
         Tvořím moderní webové stránky zaměřené na výkon, design a reálné výsledky pro vaše podnikání.
       </p>
     </div>
@@ -484,22 +490,28 @@
     <div class="container">
       <div class="about-story-grid">
         <div class="about-story-text reveal">
-          <span class="section-label">O mně</span>
-          <h2 class="section-title">Přetvářím nápady <span class="gradient-text">v elegantní řešení</span></h2>
-          <p class="story-paragraph">
-            Jsem full-stack developer s citem pro estetiku, který se specializuje na tvorbu elegantních a přehledných
-            webových stránek. Zaměřuji se na přetváření nápadů do funkčních řešení.
+          <span class="section-label" data-i18n="aboutpage.story.label">O mně</span>
+          <h2 class="section-title" data-i18n-html="aboutpage.story.title.html">Přetvářím nápady <span class="gradient-text">v elegantní řešení</span></h2>
+          <p class="story-paragraph" data-i18n="aboutpage.story.p1">
+            Jsem full-stack developer s grafickým vzděláním, díky kterému přistupuji k tvorbě webů komplexně. Od prvního
+            návrhu až po finální implementaci. Propojuji design, funkčnost a výkon do jednoho celku, který dává smysl
+            nejen technicky, ale i vizuálně.
           </p>
-          <p class="story-paragraph">
-            Ve všem, co dělám, kladu důraz na výkon a použitelnost. Pevně věřím, že web by měl nejen perfektně fungovat,
-            ale také dobře vypadat.
+          <p class="story-paragraph" data-i18n="aboutpage.story.p2">
+            Každý web tvořím s důrazem na uživatele. Dbám na to, aby byl přehledný, intuitivní a snadno použitelný,
+            takže se v něm návštěvník rychle zorientuje a najde přesně to, co hledá. Zároveň kladu důraz na detail,
+            estetiku a celkový dojem, který web zanechá.
+          </p>
+          <p class="story-paragraph" data-i18n="aboutpage.story.p3">
+            Mým cílem není jen vytvořit funkční stránku, ale řešení, které funguje dlouhodobě, dobře vypadá, rychle běží
+            a efektivně plní svůj účel.
           </p>
         </div>
         <div class="about-story-visual reveal reveal-delay-2">
           <div class="about-portrait">
             <img src="assets/about.png" alt="Pavel Fuxa — Web Developer" />
           </div>
-          <div class="about-floating-badge">Otevřený spolupráci</div>
+          <div class="about-floating-badge" data-i18n="about.badge">Otevřený spolupráci</div>
         </div>
       </div>
     </div>
@@ -509,34 +521,34 @@
   <section class="about-process" id="process">
     <div class="container">
       <div class="about-process-header">
-        <span class="section-label no-line" style="justify-content: center;">Jak pracuji</span>
-        <h2 class="section-title">Od nápadu k <span class="gradient-text">hotovému webu</span></h2>
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="process.label">Jak pracuji</span>
+        <h2 class="section-title" data-i18n-html="process.title.html">Od nápadu k <span class="gradient-text">hotovému webu</span></h2>
 
       </div>
 
       <div class="process-grid">
         <div class="process-card reveal">
           <div class="process-bg-number">01</div>
-          <h3>Analýza</h3>
-          <p>Pochopím vaše cíle, cílovou skupinu a požadavky na web. Zjistím, co potřebujete, aby byl výsledek přesně na
+          <h3 data-i18n="process.1.title">Analýza</h3>
+          <p data-i18n="process.1.desc">Pochopím vaše cíle, cílovou skupinu a požadavky na web. Zjistím, co potřebujete, aby byl výsledek přesně na
             míru.</p>
         </div>
         <div class="process-card reveal reveal-delay-1">
           <div class="process-bg-number">02</div>
-          <h3>Design</h3>
-          <p>Navrhnu čistý a moderní vizuál, který ladí s vaší značkou. Důraz kladu na přehlednost a uživatelský
+          <h3 data-i18n="process.2.title">Design</h3>
+          <p data-i18n="process.2.desc">Navrhnu čistý a moderní vizuál, který ladí s vaší značkou. Důraz kladu na přehlednost a uživatelský
             zážitek.</p>
         </div>
         <div class="process-card reveal reveal-delay-2">
           <div class="process-bg-number">03</div>
-          <h3>Vývoj</h3>
-          <p>Přetvořím návrh v živý web s čistým kódem. Stavím na moderních technologiích pro maximální rychlost a
+          <h3 data-i18n="process.3.title">Vývoj</h3>
+          <p data-i18n="process.3.desc">Přetvořím návrh v živý web s čistým kódem. Stavím na moderních technologiích pro maximální rychlost a
             spolehlivost.</p>
         </div>
         <div class="process-card reveal reveal-delay-3">
           <div class="process-bg-number">04</div>
-          <h3>Optimalizace</h3>
-          <p>Otestuji výkon, přístupnost a SEO. Zajistím, že web funguje perfektně na všech zařízeních a je připraven na
+          <h3 data-i18n="process.4.title">Optimalizace</h3>
+          <p data-i18n="process.4.desc">Otestuji výkon, přístupnost a SEO. Zajistím, že web funguje perfektně na všech zařízeních a je připraven na
             spuštění.</p>
         </div>
       </div>
@@ -547,9 +559,9 @@
   <section class="about-benefits" id="benefits">
     <div class="container">
       <div class="about-benefits-header">
-        <span class="section-label no-line" style="justify-content: center;">Co získáte</span>
-        <h2 class="section-title">Proč spolupracovat <span class="gradient-text">se mnou</span></h2>
-        <p class="section-subtitle">Zaměřuji se na kvalitu a výsledky, které vám přinesou reálnou hodnotu.</p>
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="benefits.label">Co získáte</span>
+        <h2 class="section-title" data-i18n-html="benefits.title.html">Proč spolupracovat <span class="gradient-text">se mnou</span></h2>
+        <p class="section-subtitle" data-i18n="benefits.subtitle">Zaměřuji se na kvalitu a výsledky, které vám přinesou reálnou hodnotu.</p>
       </div>
 
       <div class="benefits-grid">
@@ -561,8 +573,8 @@
             </svg>
           </div>
           <div class="benefit-content">
-            <h3>Rychlý a spolehlivý web</h3>
-            <p>Stavím weby, které jsou rychlé, stabilní a fungují bez problémů na mobilu i počítači.
+            <h3 data-i18n="benefit.1.title">Rychlý a spolehlivý web</h3>
+            <p data-i18n="benefit.1.desc">Stavím weby, které jsou rychlé, stabilní a fungují bez problémů na mobilu i počítači.
             </p>
           </div>
         </div>
@@ -576,8 +588,8 @@
             </svg>
           </div>
           <div class="benefit-content">
-            <h3>Čistý a moderní design</h3>
-            <p>Dělám design, který je čistý, přehledný a dává smysl. Bez zbytečností navíc.</p>
+            <h3 data-i18n="benefit.2.title">Čistý a moderní design</h3>
+            <p data-i18n="benefit.2.desc">Dělám design, který je čistý, přehledný a dává smysl. Bez zbytečností navíc.</p>
           </div>
         </div>
 
@@ -592,8 +604,8 @@
             </svg>
           </div>
           <div class="benefit-content">
-            <h3>Uživatelský zážitek</h3>
-            <p>Záleží mi na tom, aby se na webu každý rychle zorientoval a snadno našel, co potřebuje.</p>
+            <h3 data-i18n="benefit.3.title">Uživatelský zážitek</h3>
+            <p data-i18n="benefit.3.desc">Záleží mi na tom, aby se na webu každý rychle zorientoval a snadno našel, co potřebuje.</p>
           </div>
         </div>
 
@@ -607,8 +619,8 @@
             </svg>
           </div>
           <div class="benefit-content">
-            <h3>Cíl je jasný</h3>
-            <p>Každý projekt má jasný cíl. Pomoci vám získat kontakt, zákazníka nebo objednávku.</p>
+            <h3 data-i18n="benefit.4.title">Cíl je jasný</h3>
+            <p data-i18n="benefit.4.desc">Každý projekt má jasný cíl. Pomoci vám získat kontakt, zákazníka nebo objednávku.</p>
           </div>
         </div>
       </div>
@@ -619,8 +631,8 @@
   <section class="about-tech" id="tech">
     <div class="container">
       <div class="about-tech-header">
-        <span class="section-label no-line" style="justify-content: center;">Technologie</span>
-        <h2 class="section-title">Nástroje, které <span class="gradient-text">používám</span></h2>
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="tech.label">Technologie</span>
+        <h2 class="section-title" data-i18n-html="tech.title.html">Nástroje, které <span class="gradient-text">používám</span></h2>
       </div>
 
       <div class="tech-list">
@@ -641,8 +653,8 @@
   <section class="about-clients" id="clients">
     <div class="container">
       <div class="about-clients-header">
-        <span class="section-label no-line" style="justify-content: center;">S kým pracuji</span>
-        <h2 class="section-title">Ideální <span class="gradient-text">spolupráce</span></h2>
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="clients.label">S kým pracuji</span>
+        <h2 class="section-title" data-i18n-html="clients.title.html">Ideální <span class="gradient-text">spolupráce</span></h2>
       </div>
 
       <div class="clients-grid">
@@ -653,8 +665,8 @@
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
             </svg>
           </div>
-          <h3>Startupy</h3>
-          <p>Potřebujete rychle kvalitní web, který udělá dojem na investory i zákazníky? Pomohu vám se odlišit.</p>
+          <h3 data-i18n="client.1.title">Startupy</h3>
+          <p data-i18n="client.1.desc">Potřebujete rychle kvalitní web, který udělá dojem na investory i zákazníky? Pomohu vám se odlišit.</p>
         </div>
 
         <div class="client-card reveal reveal-delay-1">
@@ -665,8 +677,8 @@
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
           </div>
-          <h3>Firmy</h3>
-          <p>Tvořím weby pro firmy, které chtějí být víc vidět a získávat nové zákazníky. Ať už máte kavárnu, službu
+          <h3 data-i18n="client.2.title">Firmy</h3>
+          <p data-i18n="client.2.desc">Tvořím weby pro firmy, které chtějí být víc vidět a získávat nové zákazníky. Ať už máte kavárnu, službu
             nebo lokální byznys.
           </p>
         </div>
@@ -679,8 +691,8 @@
               <circle cx="12" cy="7" r="4" />
             </svg>
           </div>
-          <h3>Podnikatelé</h3>
-          <p>Pomůžu vám s webem pro osobní značku, portfolio nebo landing page. Tak, abyste působili profesionálně a
+          <h3 data-i18n="client.3.title">Podnikatelé</h3>
+          <p data-i18n="client.3.desc">Pomůžu vám s webem pro osobní značku, portfolio nebo landing page. Tak, abyste působili profesionálně a
             důvěryhodně.
           </p>
         </div>
@@ -692,11 +704,11 @@
   <section class="about-cta" id="cta">
     <div class="container">
       <div class="about-cta-content">
-        <span class="section-label no-line" style="justify-content: center;">Připraveni?</span>
-        <h2 class="section-title">Pojďme společně vytvořit <span class="gradient-text">něco skvělého</span></h2>
-        <p class="section-subtitle">Máte nápad na projekt? Napište mi a společně ho proměníme v realitu.</p>
+        <span class="section-label no-line" style="justify-content: center;" data-i18n="cta.label">Připraveni?</span>
+        <h2 class="section-title" data-i18n-html="cta.title.html">Pojďme společně vytvořit <span class="gradient-text">něco skvělého</span></h2>
+        <p class="section-subtitle" data-i18n="cta.subtitle">Máte nápad na projekt? Napište mi a společně ho proměníme v realitu.</p>
         <a href="contact.html#form" class="btn-primary" id="aboutCtaBtn">
-          Domluvit spolupráci
+          <span data-i18n="cta.btn">Domluvit spolupráci</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -740,18 +752,18 @@
 
         <!-- Center: Navigation -->
         <div class="footer-nav">
-          <h4 class="footer-heading">Navigace</h4>
+          <h4 class="footer-heading" data-i18n="footer.nav.heading">Navigace</h4>
           <ul class="footer-nav-list">
-            <li><a href="index.html" class="footer-nav-link">Domů</a></li>
-            <li><a href="about.html" class="footer-nav-link">O mně</a></li>
-            <li><a href="projects.html" class="footer-nav-link">Projekty</a></li>
-            <li><a href="contact.html" class="footer-nav-link">Kontakt</a></li>
+            <li><a href="index.html" class="footer-nav-link" data-i18n="nav.home">Domů</a></li>
+            <li><a href="about.html" class="footer-nav-link" data-i18n="nav.about">O mně</a></li>
+            <li><a href="projects.html" class="footer-nav-link" data-i18n="nav.projects">Projekty</a></li>
+            <li><a href="contact.html" class="footer-nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </div>
 
         <!-- Right: Social -->
         <div class="footer-social-col">
-          <h4 class="footer-heading">Sociální sítě</h4>
+          <h4 class="footer-heading" data-i18n="footer.social.heading">Sociální sítě</h4>
           <div class="footer-socials">
             <a href="https://www.facebook.com/profile.php?id=61572145793086" class="footer-social-link"
               aria-label="Facebook" id="footerFacebook" target="_blank" rel="noopener noreferrer">
@@ -786,6 +798,7 @@
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="index.js"></script>
   <script>
     // ==== Interactive Flowing Particles Background ====
