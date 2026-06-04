@@ -4,17 +4,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ---- Shared mouse tracking ----
-  let mouseX = -500, mouseY = -500;
-
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Hide on touch devices
-  const isTouchDevice = 'ontouchstart' in window;
-
   // ---- Navbar scroll effect ----
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {

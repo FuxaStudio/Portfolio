@@ -27,9 +27,6 @@ window.translations = {
     'footer.social.heading': 'Sociální sítě',
 
     // Hero (index page)
-    'hero.line1': 'Proměním návštěvníky',
-    'hero.line2': 've vaše zákazníky',
-    'hero.desc': 'Navrhuji i programuji. Každý web stavím od základu na míru tomu, co potřebujete.',
     'hero.cta.primary': 'Domluvit spolupráci',
     'hero.cta.secondary': 'Moje projekty',
 
@@ -87,7 +84,6 @@ window.translations = {
 
     // About page — hero
     'aboutpage.hero.title.html': 'O <span class="gradient-text">Mně</span>',
-    'aboutpage.hero.desc': 'Tvořím moderní webové stránky zaměřené na výkon, design a reálné výsledky pro vaše podnikání.',
 
     // About page — story
     'aboutpage.story.label': 'O mně',
@@ -108,32 +104,9 @@ window.translations = {
     'process.4.title': 'Optimalizace',
     'process.4.desc': 'Otestuji výkon, přístupnost a SEO. Zajistím, že web funguje perfektně na všech zařízeních a je připraven na spuštění.',
 
-    // About page — benefits
-    'benefits.label': 'Co získáte',
-    'benefits.title.html': 'Proč spolupracovat <span class="gradient-text">se mnou</span>',
-    'benefits.subtitle': 'Zaměřuji se na kvalitu a výsledky, které vám přinesou reálnou hodnotu.',
-    'benefit.1.title': 'Rychlý a spolehlivý web',
-    'benefit.1.desc': 'Stavím weby, které jsou rychlé, stabilní a fungují bez problémů na mobilu i počítači.',
-    'benefit.2.title': 'Čistý a moderní design',
-    'benefit.2.desc': 'Dělám design, který je čistý, přehledný a dává smysl. Bez zbytečností navíc.',
-    'benefit.3.title': 'Uživatelský zážitek',
-    'benefit.3.desc': 'Záleží mi na tom, aby se na webu každý rychle zorientoval a snadno našel, co potřebuje.',
-    'benefit.4.title': 'Cíl je jasný',
-    'benefit.4.desc': 'Každý projekt má jasný cíl. Pomoci vám získat kontakt, zákazníka nebo objednávku.',
-
     // About page — tech
     'tech.label': 'Technologie',
     'tech.title.html': 'Nástroje, které <span class="gradient-text">používám</span>',
-
-    // About page — clients
-    'clients.label': 'S kým pracuji',
-    'clients.title.html': 'Ideální <span class="gradient-text">spolupráce</span>',
-    'client.1.title': 'Startupy',
-    'client.1.desc': 'Potřebujete rychle kvalitní web, který udělá dojem na investory i zákazníky? Pomohu vám se odlišit.',
-    'client.2.title': 'Firmy',
-    'client.2.desc': 'Tvořím weby pro firmy, které chtějí být víc vidět a získávat nové zákazníky. Ať už máte kavárnu, službu nebo lokální byznys.',
-    'client.3.title': 'Podnikatelé',
-    'client.3.desc': 'Pomůžu vám s webem pro osobní značku, portfolio nebo landing page. Tak, abyste působili profesionálně a důvěryhodně.',
 
     // About page — CTA
     'cta.label': 'Připraveni?',
@@ -159,6 +132,7 @@ window.translations = {
     'referencespage.hero.line2': 'klienti',
     'referencespage.hero.desc': 'Přečtěte si, jak hodnotí spolupráci se mnou.',
     'reference.mattina.text': 'So spoluprácou som veľmi spokojná, všetko bolo urobené podľa našich predstáv, dokonca aj texty prvých blogov. Ďakujeme.',
+    'reference.janderov.text': 'Jsme maximálně spokojení. Pomáhal nám s tvorbou webových stránek a i když to s námi nebylo úplně jednoduché, vše se nakonec podařilo. Výsledek přesně odpovídá naší představě. Budeme i nadále v kontaktu. Doporučujeme.',
     'reference.cta': 'Navštívit stránku',
 
     // Contact page
@@ -196,9 +170,6 @@ window.translations = {
     'footer.social.heading': 'Social Media',
 
     // Hero (index page)
-    'hero.line1': 'I turn visitors',
-    'hero.line2': 'into your customers.',
-    'hero.desc': 'I design and I build. Every website crafted from scratch — tailored to what you need.',
     'hero.cta.primary': "Let's Collaborate",
     'hero.cta.secondary': 'My Projects',
 
@@ -256,7 +227,6 @@ window.translations = {
 
     // About page — hero
     'aboutpage.hero.title.html': 'About <span class="gradient-text">Me</span>',
-    'aboutpage.hero.desc': 'I create modern websites focused on performance, design, and real results for your business.',
 
     // About page — story
     'aboutpage.story.label': 'About Me',
@@ -277,32 +247,9 @@ window.translations = {
     'process.4.title': 'Optimisation',
     'process.4.desc': "I'll test performance, accessibility, and SEO — ensuring the site works perfectly on all devices and is ready to launch.",
 
-    // About page — benefits
-    'benefits.label': 'What You Get',
-    'benefits.title.html': 'Why Work <span class="gradient-text">with Me</span>',
-    'benefits.subtitle': 'I focus on quality and results that bring real value to you.',
-    'benefit.1.title': 'Fast & Reliable Website',
-    'benefit.1.desc': 'I build websites that are fast, stable, and work flawlessly on both mobile and desktop.',
-    'benefit.2.title': 'Clean, Modern Design',
-    'benefit.2.desc': 'I create designs that are clean, clear, and purposeful — with nothing unnecessary.',
-    'benefit.3.title': 'User Experience',
-    'benefit.3.desc': "I care deeply about making every site easy to navigate so visitors quickly find what they need.",
-    'benefit.4.title': 'A Clear Goal',
-    'benefit.4.desc': 'Every project has a clear objective: helping you get contacts, customers, or orders.',
-
     // About page — tech
     'tech.label': 'Technologies',
     'tech.title.html': 'Tools I <span class="gradient-text">Use</span>',
-
-    // About page — clients
-    'clients.label': 'Who I Work With',
-    'clients.title.html': 'Ideal <span class="gradient-text">Collaboration</span>',
-    'client.1.title': 'Startups',
-    'client.1.desc': "Need a quality website fast that impresses investors and customers? I'll help you stand out.",
-    'client.2.title': 'Businesses',
-    'client.2.desc': "I create websites for businesses that want more visibility and new customers — whether you have a café, a service, or a local business.",
-    'client.3.title': 'Entrepreneurs',
-    'client.3.desc': "I'll help you with a personal brand website, portfolio, or landing page — so you come across as professional and trustworthy.",
 
     // About page — CTA
     'cta.label': 'Ready?',
@@ -328,6 +275,7 @@ window.translations = {
     'referencespage.hero.line2': 'clients say',
     'referencespage.hero.desc': 'Read how they describe working with me.',
     'reference.mattina.text': 'I am very satisfied with the collaboration — everything was done exactly as we envisioned, including the texts for the first blog posts. Thank you.',
+    'reference.janderov.text': 'We are extremely satisfied. He helped us create our website and even though it wasn\'t always easy, everything worked out in the end. The result is exactly what we envisioned. We will stay in touch. Highly recommended.',
     'reference.cta': 'Visit Website',
 
     // Contact page

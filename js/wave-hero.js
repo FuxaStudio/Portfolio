@@ -10,6 +10,7 @@
     var mouse  = { x: 0, y: 0 };
     var target = { x: 0, y: 0 };
     var time   = 0;
+    var raf    = null;
 
     var waves = [
       { offset: 0,               amplitude: 70, frequency: 0.003,  color: 'rgba(250,250,250,1)', opacity: 0.22 },
@@ -78,7 +79,7 @@
 
       for (var i = 0; i < waves.length; i++) drawWave(waves[i]);
 
-      requestAnimationFrame(animate);
+      raf = requestAnimationFrame(animate);
     }
 
     function onMouseMove(e) {
@@ -96,7 +97,17 @@
     window.addEventListener('resize',     resize,      { passive: true });
     window.addEventListener('mousemove',  onMouseMove, { passive: true });
     window.addEventListener('mouseleave', onMouseLeave);
-    requestAnimationFrame(animate);
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+        raf = null;
+      } else if (!raf) {
+        raf = requestAnimationFrame(animate);
+      }
+    });
+
+    raf = requestAnimationFrame(animate);
   }
 
   window.initWaveHero = initWaveHero;

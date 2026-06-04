@@ -64,6 +64,7 @@
     "@id": "https://fuxastudio.cz/#person",
     "name": "Pavel Fuxa",
     "url": "https://fuxastudio.cz/",
+    "image": "https://fuxastudio.cz/assets/about.webp",
     "jobTitle": "Web Developer",
     "description": "Freelance web developer kombinující programování s grafickým designem. Tvorba moderních, rychlých a funkčních webových stránek na míru.",
     "email": "fuxa@fuxastudio.cz",
@@ -119,14 +120,6 @@
 
     .about-hero-content .hero-title {
       margin-bottom: var(--space-xl);
-    }
-
-    .about-hero-content .hero-description {
-      max-width: 580px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: var(--space-2xl);
-      text-align: center;
     }
 
     /* ========== STORY SECTION ========== */
@@ -254,67 +247,6 @@
       line-height: 1.7;
     }
 
-    /* ========== BENEFITS SECTION ========== */
-    .about-benefits {
-      padding: var(--space-section) 0;
-    }
-
-    .about-benefits-header {
-      text-align: center;
-      margin-bottom: var(--space-4xl);
-    }
-
-    .about-benefits-header .section-subtitle {
-      margin: 0 auto;
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-xl);
-    }
-
-    .benefit-card {
-      display: flex;
-      gap: var(--space-xl);
-      padding: var(--space-2xl);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border);
-      background: var(--color-bg-card);
-      transition: all var(--duration-normal) var(--ease-out);
-    }
-
-    .benefit-card:hover {
-      border-color: var(--color-border-hover);
-      transform: translateY(-3px);
-    }
-
-    .benefit-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--color-text-secondary);
-    }
-
-    .benefit-content h3 {
-      font-family: var(--font-display);
-      font-size: var(--fs-lg);
-      font-weight: var(--fw-bold);
-      margin-bottom: var(--space-xs);
-    }
-
-    .benefit-content p {
-      font-size: var(--fs-sm);
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-    }
-
     /* ========== TECH STACK ========== */
     .about-tech {
       padding: var(--space-section) 0;
@@ -355,67 +287,6 @@
       color: var(--color-text-primary);
       background: rgba(255, 255, 255, 0.05);
       transform: translateY(-2px);
-    }
-
-    /* ========== CLIENTS SECTION ========== */
-    .about-clients {
-      padding: var(--space-section) 0;
-    }
-
-    .about-clients-header {
-      text-align: center;
-      margin-bottom: var(--space-4xl);
-    }
-
-    .about-clients-header .section-subtitle {
-      margin: 0 auto;
-    }
-
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-xl);
-    }
-
-    .client-card {
-      text-align: center;
-      padding: var(--space-2xl);
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border);
-      background: var(--color-bg-card);
-      transition: all var(--duration-normal) var(--ease-out);
-    }
-
-    .client-card:hover {
-      border-color: var(--color-border-hover);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .client-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto var(--space-lg);
-      color: var(--color-text-secondary);
-    }
-
-    .client-card h3 {
-      font-family: var(--font-display);
-      font-size: var(--fs-lg);
-      font-weight: var(--fw-bold);
-      margin-bottom: var(--space-sm);
-    }
-
-    .client-card p {
-      font-size: var(--fs-sm);
-      color: var(--color-text-secondary);
-      line-height: 1.7;
     }
 
     /* ========== CTA SECTION ========== */
@@ -492,14 +363,6 @@
     @media (max-width: 1024px) {
       /* process-timeline stays the same at 1024px */
 
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .clients-grid {
-        grid-template-columns: 1fr;
-      }
-
       .about-story-visual .about-portrait {
         max-height: 500px;
       }
@@ -567,7 +430,7 @@
 
       <div class="nav-links" id="navLinks">
         <a href="index.html" data-i18n="nav.home">Domů</a>
-        <a href="o-mne.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.about">O mně</a>
+        <a href="o-mne.html" class="static-active" data-i18n="nav.about">O mně</a>
         <a href="projekty.html" data-i18n="nav.projects">Projekty</a>
         <a href="reference.html" data-i18n="nav.references">Reference</a>
         <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>

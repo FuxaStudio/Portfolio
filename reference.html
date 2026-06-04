@@ -127,7 +127,8 @@
         "description": "Reference a hodnocení klientů spolupráce s Pavel Fuxou — Fuxa Studio",
         "url": "https://fuxastudio.cz/reference.html",
         "about": { "@id": "https://fuxastudio.cz/#person" },
-        "inLanguage": "cs-CZ"
+        "inLanguage": "cs-CZ",
+        "dateModified": "2026-06-04"
       },
       {
         "@type": "Review",
@@ -140,6 +141,20 @@
         "author": {
           "@type": "Person",
           "name": "Ivana Lencesova"
+        },
+        "itemReviewed": { "@id": "https://fuxastudio.cz/#service" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "Jsme maximálně spokojení. Pomáhal nám s tvorbou webových stránek a i když to s námi nebylo úplně jednoduché, vše se nakonec podařilo. Výsledek přesně odpovídá naší představě. Budeme i nadále v kontaktu. Doporučujeme.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Ing. Petr Schaffer"
         },
         "itemReviewed": { "@id": "https://fuxastudio.cz/#service" }
       }
@@ -159,7 +174,7 @@
         <a href="index.html" data-i18n="nav.home">Domů</a>
         <a href="o-mne.html" data-i18n="nav.about">O mně</a>
         <a href="projekty.html" data-i18n="nav.projects">Projekty</a>
-        <a href="reference.html" class="static-active" style="color: var(--color-text-primary);" data-i18n="nav.references">Reference</a>
+        <a href="reference.html" class="static-active" data-i18n="nav.references">Reference</a>
         <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
         <a href="kontakt.html#form" class="nav-cta" data-i18n="nav.cta">Domluvit spolupráci</a>
       </div>
@@ -197,7 +212,7 @@
   <!-- ========== REFERENCES ========== -->
   <section class="references-section" id="references">
     <div class="container">
-      <div class="references-grid" style="grid-template-columns: 1fr; max-width: 560px; margin: 0 auto;">
+      <div class="references-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1120px; margin: 0 auto;">
 
         <!-- Reference 1 — Mattina Café -->
         <div class="reference-card reveal">
@@ -212,13 +227,40 @@
           </p>
           <div class="reference-divider"></div>
           <div class="reference-footer">
-            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" />
+            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" loading="lazy" />
             <div class="reference-info">
               <div class="reference-name">Ivana Lencesova</div>
               <div class="reference-company">Mattina Café</div>
             </div>
           </div>
           <a href="https://mattina.sk/" class="reference-btn" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="reference.cta">Navštívit stránku</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Reference 2 — Mlýn Janderov -->
+        <div class="reference-card reveal">
+          <div class="reference-quote-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+          </div>
+          <p class="reference-text" data-i18n="reference.janderov.text">
+            Jsme maximálně spokojení. Pomáhal nám s tvorbou webových stránek a i když to s námi nebylo úplně jednoduché, vše se nakonec podařilo. Výsledek přesně odpovídá naší představě. Budeme i nadále v kontaktu. Doporučujeme.
+          </p>
+          <div class="reference-divider"></div>
+          <div class="reference-footer">
+            <img src="assets/mlyn-janderov-logo.svg" alt="Mlýn Janderov logo" class="reference-logo" loading="lazy" />
+            <div class="reference-info">
+              <div class="reference-name">Ing. Petr Schaffer</div>
+              <div class="reference-company">Mlýn Janderov</div>
+            </div>
+          </div>
+          <a href="https://mlyn-janderov.cz/" class="reference-btn" target="_blank" rel="noopener noreferrer">
             <span data-i18n="reference.cta">Navštívit stránku</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17l9.2-9.2M17 17V7H7" />

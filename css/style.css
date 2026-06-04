@@ -327,28 +327,12 @@ button {
   position: relative;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-text-primary);
-  border-radius: var(--radius-full);
-  transition: width var(--duration-normal) var(--ease-out);
-}
-
 .nav-links a:hover {
   color: var(--color-text-primary);
 }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
 .static-active {
-  color: var(--color-text-primary);
+  color: var(--color-text-primary) !important;
 }
 
 .nav-cta {
@@ -405,31 +389,6 @@ button {
   overflow: hidden;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-}
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 10, 15, 0.4) 0%,
-    rgba(10, 10, 15, 0.8) 60%,
-    var(--color-bg-primary) 100%
-  );
-}
-
 /* Interactive Starfield Canvas */
 .hero-stars-canvas {
   position: absolute;
@@ -438,48 +397,6 @@ button {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-/* Animated particles / circles */
-.hero-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  z-index: -1;
-  animation: orbFloat 8s ease-in-out infinite alternate;
-}
-
-.hero-orb-1 {
-  width: 500px;
-  height: 500px;
-  background: rgba(255, 255, 255, 0.025);
-  top: -100px;
-  right: -100px;
-  animation-delay: 0s;
-}
-
-.hero-orb-2 {
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.015);
-  bottom: -50px;
-  left: -100px;
-  animation-delay: -3s;
-}
-
-.hero-orb-3 {
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.01);
-  top: 30%;
-  left: 50%;
-  animation-delay: -5s;
-}
-
-@keyframes orbFloat {
-  0%   { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, -30px) scale(1.1); }
 }
 
 .hero-content {
@@ -507,22 +424,6 @@ button {
 .hero-title .line:nth-child(1) { animation-delay: 0.3s; }
 .hero-title .line:nth-child(2) { animation-delay: 0.5s; }
 .hero-title .line:nth-child(3) { animation-delay: 0.7s; }
-
-.hero-description {
-  font-size: var(--fs-lg);
-  color: var(--color-text-secondary);
-  max-width: 520px;
-  line-height: 1.7;
-  margin-bottom: var(--space-3xl);
-  animation: fadeInUp 0.8s var(--ease-out) 0.6s both;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-lg);
-  animation: fadeInUp 0.8s var(--ease-out) 0.8s both;
-}
 
 .btn-primary {
   display: inline-flex;
@@ -627,27 +528,6 @@ button {
   display: block;
 }
 
-/* Floating badge on about card */
-.about-floating-badge {
-  position: absolute;
-  bottom: -20px;
-  right: -10px;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--radius-lg);
-  background: #141414;
-  border: 1px solid var(--color-border);
-  backdrop-filter: blur(10px);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
-  color: var(--color-text-primary);
-  animation: floatBadge 4s ease-in-out infinite;
-}
-
-@keyframes floatBadge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 /* ================================
    PROJECTS SECTION
    ================================ */
@@ -736,12 +616,6 @@ button {
   line-height: 1;
   pointer-events: none;
   z-index: 0;
-}
-
-.project-card.project-featured .project-number {
-  font-size: 10rem;
-  top: auto;
-  bottom: var(--space-lg);
 }
 
 .project-card:hover {
@@ -1276,11 +1150,6 @@ button {
     font-size: var(--fs-xl);
   }
 
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .projects-header {
     flex-direction: column;
     align-items: flex-start;
@@ -1468,19 +1337,6 @@ button {
   border: 1px solid var(--color-border);
   object-fit: contain;
   background: var(--color-bg-secondary);
-  flex-shrink: 0;
-}
-
-.reference-logo-placeholder {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-secondary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
   flex-shrink: 0;
 }
 

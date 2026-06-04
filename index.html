@@ -59,13 +59,15 @@
         "url": "https://fuxastudio.cz/",
         "name": "Fuxa Studio",
         "description": "Portfolio webového developera Pavla Fuxy",
-        "inLanguage": "cs-CZ"
+        "inLanguage": "cs-CZ",
+        "dateModified": "2026-06-04"
       },
       {
         "@type": "Person",
         "@id": "https://fuxastudio.cz/#person",
         "name": "Pavel Fuxa",
         "url": "https://fuxastudio.cz/",
+        "image": "https://fuxastudio.cz/assets/about.webp",
         "jobTitle": "Web Developer",
         "description": "Freelance web developer kombinující programování s grafickým designem. Tvorba moderních, rychlých a funkčních webových stránek na míru.",
         "email": "fuxa@fuxastudio.cz",
@@ -89,6 +91,18 @@
           {"@type": "AdministrativeArea", "name": "Pardubický kraj"}
         ],
         "serviceType": "Tvorba webových stránek",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pardubice",
+          "addressRegion": "Pardubický kraj",
+          "addressCountry": "CZ"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "reviewCount": "2"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "fuxa@fuxastudio.cz",
@@ -346,9 +360,17 @@
 
     .references-grid-home {
       display: grid;
-      grid-template-columns: 1fr;
-      max-width: 560px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      max-width: 1120px;
       margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .references-grid-home {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -465,7 +487,7 @@
         </picture>
 
         <!-- SEO nadpis (vizuálně skrytý) -->
-        <h1 class="sr-only">Web Designer &amp; Developer — Pavel Fuxa</h1>
+        <h1 class="sr-only">Tvorba webových stránek na míru — Web Designer &amp; Developer | Pavel Fuxa</h1>
 
       </div>
     </div>
@@ -676,13 +698,40 @@
           </p>
           <div class="reference-divider"></div>
           <div class="reference-footer">
-            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" />
+            <img src="assets/mattina-logo.webp" alt="Mattina Café logo" class="reference-logo" loading="lazy" />
             <div class="reference-info">
               <div class="reference-name">Ivana Lencesova</div>
               <div class="reference-company">Mattina Café</div>
             </div>
           </div>
           <a href="https://mattina.sk/" class="reference-btn" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="reference.cta">Navštívit stránku</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Reference — Mlýn Janderov -->
+        <div class="reference-card reveal">
+          <div class="reference-quote-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+            </svg>
+          </div>
+          <p class="reference-text" data-i18n="reference.janderov.text">
+            Jsme maximálně spokojení. Pomáhal nám s tvorbou webových stránek a i když to s námi nebylo úplně jednoduché, vše se nakonec podařilo. Výsledek přesně odpovídá naší představě. Budeme i nadále v kontaktu. Doporučujeme.
+          </p>
+          <div class="reference-divider"></div>
+          <div class="reference-footer">
+            <img src="assets/mlyn-janderov-logo.svg" alt="Mlýn Janderov logo" class="reference-logo" loading="lazy" />
+            <div class="reference-info">
+              <div class="reference-name">Ing. Petr Schaffer</div>
+              <div class="reference-company">Mlýn Janderov</div>
+            </div>
+          </div>
+          <a href="https://mlyn-janderov.cz/" class="reference-btn" target="_blank" rel="noopener noreferrer">
             <span data-i18n="reference.cta">Navštívit stránku</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M7 17l9.2-9.2M17 17V7H7" />

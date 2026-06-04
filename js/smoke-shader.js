@@ -71,6 +71,7 @@
 
     var color = [0.0, 0.0, 0.0];
     var t0 = performance.now();
+    var raf = null;
 
     function resize() {
       var section = document.getElementById(sectionId);
@@ -93,9 +94,19 @@
       gl.uniform1f(uTime, now);
       gl.uniform3fv(uColor, color);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      requestAnimationFrame(render);
+      raf = requestAnimationFrame(render);
     }
-    requestAnimationFrame(render);
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        cancelAnimationFrame(raf);
+        raf = null;
+      } else if (!raf) {
+        raf = requestAnimationFrame(render);
+      }
+    });
+
+    raf = requestAnimationFrame(render);
   }
 
   window.initSmokeShader = initSmokeShader;
